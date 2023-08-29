@@ -1,4 +1,4 @@
-VM='{targetServer.name}'
+VM='{kickstartedNode.name}'
 
 echo "Disabling shared profiles"
 prlctl set "${VM}" --shared-profile off

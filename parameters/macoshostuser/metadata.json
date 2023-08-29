@@ -1,7 +1,7 @@
 {
     "externalUuid4": "40ae9c63-a8b1-4be3-a5fd-33e3d387be7e", 
-    "key": "parallelshostuser", 
-    "name": "Parallels Host User", 
+    "key": "macoshostuser", 
+    "name": "macOS Host User", 
     "showInPlan": true, 
     "type": "c.s.s.b.phv.LinOsCred"
 }

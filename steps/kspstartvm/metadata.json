@@ -1,12 +1,12 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "57bba2b2-d91d-4980-aab6-888a66289137", 
+    "externalUuid4": "58c279e1-3ad6-40a6-be2d-9353ca41ee49", 
     "interpreter": 1, 
     "key": "kspstartvm", 
     "name": "KSP Start VM", 
-    "osCredKey": "parallelshostuser", 
-    "serverKey": "parallelshost", 
+    "osCredKey": "macoshostuser", 
+    "serverKey": "macoshost", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

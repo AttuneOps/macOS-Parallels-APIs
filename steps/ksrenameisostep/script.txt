@@ -1,2 +1,2 @@
-cd {ksParallelsAttuneBaseDir}/build-{targetServer.fqn}
+cd "${HOME}/Parallels/os_auto_install/build-{targetServer.fqn}"
 mv -v $(ls) kickstart.iso

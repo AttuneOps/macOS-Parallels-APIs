@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "ksploaddriversiso", 
     "name": "KSP Load Drivers ISO", 
-    "osCredKey": "parallelshostuser", 
-    "serverKey": "parallelshost", 
+    "osCredKey": "macoshostuser", 
+    "serverKey": "macoshost", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

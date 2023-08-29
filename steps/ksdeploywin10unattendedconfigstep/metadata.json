@@ -41,7 +41,7 @@
         }
     ], 
     "name": "KS Deploy Win10 Unattended Config Step", 
-    "osCredKey": "parallelshostuser", 
-    "serverKey": "parallelshost", 
+    "osCredKey": "macoshostuser", 
+    "serverKey": "macoshost", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

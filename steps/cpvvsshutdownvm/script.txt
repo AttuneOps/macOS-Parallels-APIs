@@ -1,4 +1,4 @@
-VM='{targetServer.name}'
+VM='{kickstartedNode.name}'
 
 echo "Shutting Down VM"
 prlctl stop "${VM}"

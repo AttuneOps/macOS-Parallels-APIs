@@ -1,6 +1,6 @@
-VM='{targetServer.name}'
+VM='{kickstartedNode.name}'
 
-DIR="{ksParallelsAttuneBaseDir}/build-{targetServer.fqn}"
+DIR="${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}"
 
 # Set up the Virtual Machine by mounting the .iso to a cd drive
 prlctl set "${VM}" \

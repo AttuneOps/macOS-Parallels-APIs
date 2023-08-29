@@ -332,7 +332,7 @@
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-ssh {parallelshostuser}@{parallelshost}
+ssh {macoshostuser}@{macoshost}
                             </code>
                         </div>
 
@@ -351,7 +351,7 @@ ssh {parallelshostuser}@{parallelshost}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {ksParallelsAttuneBaseDir}/build-{targetServer.fqn}
+cd &quot;${HOME}/Parallels/os_auto_install/build-{targetServer.fqn}&quot;
 mv -v $(ls) kickstart.iso
                 </code>
             </pre>

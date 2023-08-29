@@ -418,7 +418,7 @@
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-ssh {parallelshostuser}@{parallelshost}
+ssh {macoshostuser}@{macoshost}
                             </code>
                         </div>
 
@@ -615,7 +615,7 @@ ISO=&quot;{ksParallelsAttuneBaseDir}/kickstart_{targetServer.fqn}.iso&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{targetServer.name}&#x27;
+VM=&#x27;{kickstartedNode.name}&#x27;
 
 echo &quot;Starting ${VM}&quot;
 prlctl start &quot;${VM}&quot;

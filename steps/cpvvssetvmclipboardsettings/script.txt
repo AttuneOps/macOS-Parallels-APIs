@@ -1,4 +1,4 @@
-VM='{targetServer.name}'
+VM='{kickstartedNode.name}'
 
 echo "Setting VM clipboard settings to \"Shared\""
 
