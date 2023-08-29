@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "57bba2b2-d91d-4980-aab6-888a66289137", 
+    "externalUuid4": "5cfd0b4a-bdf1-4023-b658-2d4684d9345f", 
     "interpreter": 1, 
-    "key": "kspstartvm", 
-    "name": "KSP Start VM", 
+    "key": "kswpcleanbuildfiles", 
+    "name": "KSWP Clean Build Files", 
     "osCredKey": "parallelshostuser", 
     "serverKey": "parallelshost", 
     "successExitCode": 0, 

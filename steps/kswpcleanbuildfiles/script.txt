@@ -1,0 +1,5 @@
+DIR="{ksParallelsAttuneBaseDir}/build-{targetServer.fqn}"
+[[ ! -d ${DIR} ]] || rm -rfv ${DIR}
+
+ISO="{ksParallelsAttuneBaseDir}/kickstart_{targetServer.fqn}.iso"
+[[ ! -f ${ISO} ]] || rm -fv ${ISO}

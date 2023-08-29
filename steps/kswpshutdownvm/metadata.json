@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "57bba2b2-d91d-4980-aab6-888a66289137", 
+    "externalUuid4": "0fa2c377-c96d-403e-aa1c-a913a9ce31b3", 
     "interpreter": 1, 
-    "key": "kspstartvm", 
-    "name": "KSP Start VM", 
+    "key": "kswpshutdownvm", 
+    "name": "KSWP Shutdown VM", 
     "osCredKey": "parallelshostuser", 
     "serverKey": "parallelshost", 
     "successExitCode": 0, 

@@ -1,0 +1,2 @@
+cd {ksParallelsAttuneBaseDir}/build-{targetServer.fqn}
+mv -v $(ls) kickstart.iso

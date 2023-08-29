@@ -1,0 +1,4 @@
+VM='{targetServer.name}'
+
+echo "Shutting down ${VM}"
+prlctl stop "${VM}"

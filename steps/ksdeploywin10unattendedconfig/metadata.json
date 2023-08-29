@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "95eff22d-d850-45f8-9232-474629f95d0a", 
+    "isBlueprint": true, 
+    "key": "ksdeploywin10unattendedconfig", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "ksdeploywin10unattendedconfigstep"
+        }
+    ], 
+    "name": "KS Deploy Win10 Unattended Config", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

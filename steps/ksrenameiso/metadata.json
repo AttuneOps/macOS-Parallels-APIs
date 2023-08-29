@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "ba37a618-00d5-41c4-a2d1-ebd1ca5442df", 
+    "isBlueprint": true, 
+    "key": "ksrenameiso", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "ksrenameisostep"
+        }
+    ], 
+    "name": "KS Rename ISO", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

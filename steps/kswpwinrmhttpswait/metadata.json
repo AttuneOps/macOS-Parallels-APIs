@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "eb04c7c1-193b-4034-ad4c-24f5b1fd3322", 
+    "key": "kswpwinrmhttpswait", 
+    "minDowntime": 0, 
+    "name": "KSWP WinRM HTTPS Wait", 
+    "postWait": 10, 
+    "preWait": 0, 
+    "serverKey": "targetserverwin", 
+    "tcpPort": 5986, 
+    "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
+}

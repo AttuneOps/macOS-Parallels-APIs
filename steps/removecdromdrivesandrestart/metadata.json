@@ -1,0 +1,36 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "29201335-5eee-49a5-a96c-dbfb80c11c82", 
+    "isBlueprint": true, 
+    "key": "removecdromdrivesandrestart", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "kswpwinrmhttpswait"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "kswpshutdownvm"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "kswpremovedriverscdrom"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "kswpcleanbuildfiles"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "kspstartvm"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "kswpwinrmhttpswait"
+        }
+    ], 
+    "name": "Remove CD ROM Drives and Restart", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

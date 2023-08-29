@@ -1,0 +1,10 @@
+VM='{targetServer.name}'
+set -x
+
+
+# Remove Drivers CDROM
+prlctl set "${VM}" --device-del cdrom0
+#prlctl set "${VM}" --device-set cdrom0 --disconnect
+
+# Remove Drivers CDROM
+prlctl set "${VM}" --device-del cdrom1

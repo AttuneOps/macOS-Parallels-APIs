@@ -69,6 +69,15 @@ This Project contains the following Blueprints.
 ### KS Setup macOS for ISO Building
 
 
+### KS Rename ISO
+
+
+### KS Deploy Win10 Unattended Config
+
+
+### Remove CD ROM Drives and Restart
+
+
 
 
 
@@ -84,6 +93,12 @@ This Project contains the following Blueprints.
 | Parallels Host | Linux/Unix Node | `parallelshost` |  |
 | Parallels Host User | Linux/Unix Credential | `parallelshostuser` |  |
 | Target Server | Basic Node | `targetserver` |  |
+| KS: Windows Interface Alias | Text | `kswindowsinterfacealias` | oVirt = "Ethernet"<br>ESXi = "Ethernet0"<br>Parallels = "Ethernet"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
+| Target Server: Windows TimeZone | Text | `targetserverwindowstimezone` |  |
+| Windows: Administrator | Windows Credential | `windowsadministrator` | The windows administrator user |
+| Target Subnet | Network IPv4 Subnet | `targetsubnet` |  |
+| Kickstart Organisation Name | Text | `kickstartorganisationname` |  |
+| Target Server: Win | Windows Node | `targetserverwin` |  |
 
 
 
@@ -93,6 +108,7 @@ This Project contains the following Blueprints.
 | Name | Type | Comment |
 | ---- | ---- | ------- |
 | WIN Win10 Parallels Drivers | Version Controlled Files | From C:\Program Files (x86)\Parallels\Parallels Tools |
+| Win10 Parallels Unattended Config | Version Controlled Files |  |
 
 
 

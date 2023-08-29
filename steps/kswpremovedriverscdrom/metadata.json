@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "57bba2b2-d91d-4980-aab6-888a66289137", 
+    "externalUuid4": "c3478c4f-dcd8-4ef8-a310-476d550962e7", 
     "interpreter": 1, 
-    "key": "kspstartvm", 
-    "name": "KSP Start VM", 
+    "key": "kswpremovedriverscdrom", 
+    "name": "KSWP Remove Drivers CDROM", 
     "osCredKey": "parallelshostuser", 
     "serverKey": "parallelshost", 
     "successExitCode": 0, 
