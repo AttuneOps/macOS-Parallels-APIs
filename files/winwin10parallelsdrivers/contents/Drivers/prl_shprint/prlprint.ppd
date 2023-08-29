@@ -1,0 +1,423 @@
+*PPD-Adobe: "4.3"
+*% Adobe Systems PostScript(R) Printer Description File
+*%
+*% Copyright 2005-2021 Parallels International GmbH
+*%
+*% Version: 16.5.0-49183
+*% Date: 04/02/2021
+*%
+*FormatVersion:    "4.3"
+*FileVersion:      "16.49183"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion:  English
+*Product:          "(Shared Printer)"
+*PSVersion:        "(49183) 1"
+*Manufacturer:     "Parallels"
+*ModelName:        "Parallels Shared Printer"
+*ShortNickName:    "Parallels Shared Printer"
+*NickName:         "Parallels Shared Printer"
+*PCFileName:       "prlprint.ppd"
+
+*MSIsXPSDriver: False
+*MSPrintSchemaPrivateNamespaceURI: "http://schemas.monotypeimaging.com/ptpc/2006/1"
+*MSXPSMaxCopies: "1"
+
+*% === Basic Device Capabilities ============
+*LanguageLevel: "3"
+*Protocols: PJL TBCP
+
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+
+*FileSystem: False
+
+*TTRasterizer:  Type42
+*?TTRasterizer: "
+   save
+	  42 /FontType resourcestatus
+	  { pop pop (Type42)} {pop pop (None)} ifelse = flush
+   restore
+"
+*End
+
+*JCLBegin: "<1B>%-12345X@PJL SET JOBATTR <22>OS =Windows<22><0A>@PJL SET JOBATTR <22>OS Version = Windows 8.1 6.3.9600.1<22><0A>@PJL SET JOBATTR <22>Render Type = InOS<22><0A>"
+*JCLToPSInterpreter: "@PJL ENTER LANGUAGE=POSTSCRIPT<0A>"
+*JCLEnd:             "<1B>%-12345X@PJL EOJ<0A><1B>%-12345X"
+*Password: "()"
+*ExitServer: "
+	count 0 eq
+	{ false } { true exch startjob } ifelse
+	not {
+	(WARNING: Cannot modify initial VM.) =
+	(Missing or invalid password.) =
+	(Please contact the author of this software.) = flush quit
+	} if "
+*End
+*Reset: "
+	count 0 eq
+	{ false } { true exch startjob } ifelse
+	not
+	{ (WARNING: Cannot reset printer.) =
+	  (Missing or invalid password.) =
+	  (Please contact the author of this software.) = flush quit
+	} if
+	systemdict /quit get exec
+	(WARNING : Printer Reset Failed.) = flush"
+*End
+
+*DefaultResolution: 600x600dpi
+*?Resolution: "
+  save currentpagedevice
+  /HWResolution get
+  aload pop exch (          ) cvs print (x) print (          ) cvs print (dpi)
+  = flush
+  restore"
+*End
+
+*% Halftone Information =================
+*ScreenFreq: "150.0"
+*ScreenAngle: "45.0"
+*DefaultScreenProc: Dot
+*ScreenProc Dot: "
+{abs exch abs 2 copy add 1 gt {1 sub dup mul exch 1 sub dup mul add 1
+sub }{dup mul exch dup mul add 1 exch sub }ifelse }
+"
+*End
+*ScreenProc Line: "{ pop }"
+*ScreenProc Ellipse: "{ dup 5 mul 8 div mul exch dup mul exch add sqrt 1 exch sub }"
+*DefaultTransfer: Null
+*Transfer Null: "{ }"
+*Transfer Null.Inverse: "{ 1 exch sub }"
+
+*%==========================================================
+*% Collate
+*%==========================================================
+*OpenUI *Collate/Collate:  Boolean
+*OrderDependency: 10 DocumentSetup *Collate
+*DefaultCollate: True
+*Collate False/Off: "<</Collate false>> setpagedevice"
+*Collate True/On: "<</Collate true>> setpagedevice"
+*?Collate: "
+   save
+	  currentpagedevice /Collate get
+	  {(True)}{(False)}ifelse = flush
+   restore
+"
+*End
+*CloseUI: *Collate
+
+*%======================================================================
+*% Duplex
+*%======================================================================
+*OpenUI *Duplex/Duplex:  PickOne
+*OrderDependency: 100 DocumentSetup *Duplex
+*DefaultDuplex: None
+*Duplex None/No: "
+	<</Duplex false /Tumble false>> setpagedevice"
+*End
+*Duplex DuplexNoTumble/Yes, flip over: "
+	<</Duplex true /Tumble false>> setpagedevice"
+*End
+*Duplex DuplexTumble/Yes, flip up: "
+	<</Duplex true /Tumble true>> setpagedevice"
+*End
+*?Duplex: "save
+   currentpagedevice dup /Duplex known
+	 {dup /Duplex get
+	   {/Tumble get{(DuplexTumble)}{(DuplexNoTumble)}ifelse}
+	   {pop (None)} ifelse
+	 }
+	 {(None)} ifelse = flush
+restore
+"
+*End
+*CloseUI: *Duplex
+
+*%==========================================================
+*% Paper Handling
+*%==========================================================
+*OpenUI *PageSize: PickOne
+*OrderDependency: 20 AnySetup *PageSize
+*DefaultPageSize: A4
+
+*PageSize A0/A0: "
+	(<<) cvx exec
+		/PageSize [2384 3370]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize A1/A1: "
+	(<<) cvx exec
+		/PageSize [1684 2384]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize A2/A2: "
+	(<<) cvx exec
+		/PageSize [1191 1684]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize A3/A3: "
+	(<<) cvx exec
+		/PageSize [842 1191]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize A4/A4: "
+	(<<) cvx exec
+		/PageSize [595 842]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize A5/A5: "
+	(<<) cvx exec
+		/PageSize [420 595]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize A6/A6: "
+	(<<) cvx exec
+		/PageSize [297 420]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize B5/B5 JIS: "
+	(<<) cvx exec
+		/PageSize [516 729]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize B6/B6 JIS: "
+	(<<) cvx exec
+		/PageSize [363 516]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize DoublePostcardRotated/Double Japan Postcard Rotated : "
+	(<<) cvx exec
+		/PageSize [419 284]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize Envelope10/Envelope #10: "
+	(<<) cvx exec
+		/PageSize [297 684]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize EnvelopeIsoB5/Envelope Iso B5: "
+	(<<) cvx exec
+		/PageSize [499 709]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize EnvelopeC5/Envelope C5: "
+	(<<) cvx exec
+		/PageSize [459 649]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize EnvelopeDL/Envelope DL: "
+	(<<) cvx exec
+		/PageSize [312 624]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize EnvelopeMonarch/Envelope Monarch: "
+	(<<) cvx exec
+		/PageSize [522 756]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize Letter/Letter: "
+	(<<) cvx exec
+		/PageSize [612 792]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*PageSize Legal/Legal: "
+	(<<) cvx exec
+		/PageSize [612 1008]
+		/ImagingBBox null
+	(>>) cvx exec setpagedevice"
+*End
+
+*?PageSize: "
+  save currentpagedevice /PageSize get aload pop
+  2 copy gt {exch} if (Unknown)
+  (<<) cvx exec
+  [612 792] (Letter)
+  [612 1008] (Legal)
+  [595 842] (A4) (>>) cvx exec
+  { exch aload pop 4 index sub abs 5 le exch 5 index sub abs 5 le and
+	{ exch pop exit } { pop } ifelse
+  } bind forall = flush pop pop
+  restore"
+*End
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 30 AnySetup *PageRegion
+*DefaultPageRegion: A4
+
+*PageRegion A0/A0: "<</PageSize [2384 3370] /ImagingBBox null>> cvx exec setpagedevice"
+*PageRegion A1/A1: "<</PageSize [1684 2384] /ImagingBBox null>> cvx exec setpagedevice"
+*PageRegion A2/A2: "<</PageSize [1191 1684] /ImagingBBox null>> cvx exec setpagedevice"
+*PageRegion A3/A3: "<</PageSize [842 1191] /ImagingBBox null>> cvx exec setpagedevice"
+
+*PageRegion A4/A4: "<</PageSize [595 842] /ImagingBBox null>> cvx exec setpagedevice"
+*PageRegion A5/A5: "<</PageSize [420 595] /ImagingBBox null>> cvx exec setpagedevice"
+*PageRegion A6/A6: "<</PageSize [297 420] /ImagingBBox null>> cvx exec setpagedevice"
+*PageRegion B5/B5 JIS: "<</PageSize [516 729] /ImagingBBox null>> cvx exec setpagedevice"
+*PageRegion B6/B6 JIS: "<</PageSize [363 516] /ImagingBBox null>> cvx exec setpagedevice"
+
+*PageRegion DoublePostcardRotated/Double Japan Postcard Rotated : "
+	<</PageSize [419 284] /ImagingBBox null>> cvx exec setpagedevice"
+*End
+
+*PageRegion Envelope10/Envelope #10: "
+	<</PageSize [297 684] /ImagingBBox null>> cvx exec setpagedevice"
+*End
+
+*PageRegion EnvelopeIsoB5/Envelope Iso B5: "
+	<</PageSize [499 709] /ImagingBBox null>> cvx exec setpagedevice"
+*End
+
+*PageRegion EnvelopeC5/Envelope C5: "
+	<</PageSize [459 649] /ImagingBBox null>> cvx exec setpagedevice"
+*End
+
+*PageRegion EnvelopeDL/Envelope DL: "
+	<</PageSize [312 624] /ImagingBBox null>> cvx exec setpagedevice"
+*End
+
+*PageRegion EnvelopeMonarch/Envelope Monarch: "
+	<</PageSize [522 756] /ImagingBBox null>> cvx exec setpagedevice"
+*End
+
+*PageRegion Letter/Letter: "
+	<</PageSize [612 792] /ImagingBBox null>> cvx exec setpagedevice"
+*End
+
+*PageRegion Legal/Legal: "
+	<</PageSize [612 1008] /ImagingBBox null>> cvx exec setpagedevice"
+*End
+
+*CloseUI: *PageRegion
+
+*% The following entries provide information about specific paper keywords.
+*DefaultImageableArea: A4
+
+*ImageableArea A0/A0: "1 1 2383 3369"
+*ImageableArea A1/A1: "1 1 1683 2383"
+*ImageableArea A2/A2: "1 1 1190 1683"
+*ImageableArea A3/A3: "1 1 841 1190"
+*ImageableArea A4/A4: "1 1 594 841"
+*ImageableArea A5/A5: "1 1 419 594"
+*ImageableArea A6/A6: "1 1 296 419"
+*ImageableArea B5/B5 JIS: "1 1 515 728"
+*ImageableArea B6/B6 JIS: "1 1 362 515"
+*ImageableArea DoublePostcardRotated/Double Japan Postcard Rotated : "1 1 418 283"
+*ImageableArea Envelope10/Envelope #10: "1 1 296 683"
+*ImageableArea EnvelopeIsoB5/Envelope Iso B5: "1 1 498 708"
+*ImageableArea EnvelopeC5/Envelope C5: "1 1 458 648"
+*ImageableArea EnvelopeDL/Envelope DL: "1 1 311 623"
+*ImageableArea EnvelopeMonarch/Envelope Monarch: "1 1 521 755"
+*ImageableArea Letter/Letter: "1 1 611 791"
+*ImageableArea Legal/Legal: "1 1 611 1007"
+
+*?ImageableArea: "
+  save
+  /cvp { (                ) cvs print ( ) print } bind def
+  /upperright {10000 mul floor 10000 div} bind def
+  /lowerleft {10000 mul ceiling 10000 div} bind def
+  newpath clippath pathbbox
+  4 -2 roll exch 2 {lowerleft cvp} repeat
+  exch 2 {upperright cvp} repeat flush
+  restore"
+*End
+
+*% These provide the physical dimensions of the paper (by keyword)
+*DefaultPaperDimension: A4
+
+*PaperDimension A0/A0: "2384 3370"
+*PaperDimension A1/A1: "1684 2384"
+*PaperDimension A2/A2: "1191 1684"
+*PaperDimension A3/A3: "842 1191"
+*PaperDimension A4/A4: "595 842"
+*PaperDimension A5/A5: "420 595"
+*PaperDimension A6/A6: "297 420"
+*PaperDimension B5/B5 JIS: "516 729"
+*PaperDimension B6/B6 JIS: "363 516"
+*PaperDimension DoublePostcardRotated/Double Japan Postcard Rotated : "419 284"
+*PaperDimension Envelope10/Envelope #10: "297 684"
+*PaperDimension EnvelopeIsoB5/Envelope Iso B5: "499 709"
+*PaperDimension EnvelopeC5/Envelope C5: "459 649"
+*PaperDimension EnvelopeDL/Envelope DL: "312 624"
+*PaperDimension EnvelopeMonarch/Envelope Monarch: "522 756"
+*PaperDimension Letter/Letter: "612 792"
+*PaperDimension Legal/Legal: "612 1008"
+
+*RequiresPageRegion All: True
+
+*% Font Information =====================
+*DefaultFont: Courier
+*Font Courier: Standard "(002.004S)" Standard ROM
+*Font Courier-Bold: Standard "(002.004S)" Standard ROM
+*Font Courier-BoldOblique: Standard "(002.004S)" Standard ROM
+*Font Courier-Oblique: Standard "(002.004S)" Standard ROM
+*?FontQuery: "
+   save
+   { count 1 gt
+	  { exch dup 127 string cvs (/) print print (:) print
+	  /Font resourcestatus {pop pop (Yes)} {(No)} ifelse =
+	  } { exit } ifelse
+   } bind loop
+   (*) = flush
+   restore
+"
+*End
+*?FontList: "
+   save
+	 (*) {cvn ==} 128 string /Font resourceforall
+	 (*) = flush
+   restore
+"
+*End
+
+*DefaultColorSep: ProcessBlack.60lpi.600x600dpi/60 lpi / 600x600 dpi
+*InkName: ProcessBlack/Process Black
+*InkName: ProcessCyan/Process Cyan
+*InkName: ProcessMagenta/Process Magenta
+*InkName: ProcessYellow/Process Yellow
+
+*%  For 60 lpi / 600x600dpi ================================
+
+*ColorSepScreenAngle ProcessBlack.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+*ColorSepScreenAngle CustomColor.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+*ColorSepScreenAngle ProcessCyan.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+*ColorSepScreenAngle ProcessMagenta.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+*ColorSepScreenAngle ProcessYellow.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+
+*ColorSepScreenFreq ProcessBlack.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+*ColorSepScreenFreq CustomColor.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+*ColorSepScreenFreq ProcessCyan.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+*ColorSepScreenFreq ProcessMagenta.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+*ColorSepScreenFreq ProcessYellow.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"

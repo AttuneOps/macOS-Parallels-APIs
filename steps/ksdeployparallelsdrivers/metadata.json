@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "7e95802b-2340-48db-8e02-109ee6932934", 
+    "isBlueprint": true, 
+    "key": "ksdeployparallelsdrivers", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "ksdeployparallelsdriversstep"
+        }
+    ], 
+    "name": "KS Deploy Parallels Drivers", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

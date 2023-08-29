@@ -1,0 +1,5 @@
+VM='{targetServer.name}'
+
+echo "Setting VM clipboard settings to \"Shared\""
+
+prlctl set "${VM}" --shared-clipboard on

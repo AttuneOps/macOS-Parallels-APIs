@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "88ff852a-e942-472b-9edf-7a1f9f1609c2", 
+    "interpreter": 1, 
+    "key": "cpvvsdisableusbsupport", 
+    "name": "CPVVS Disable USB Support", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "1cd74dd6-d589-41c0-ae36-d3a5bb5e2e23", 
+    "interpreter": 1, 
+    "key": "kswpinstallhomebrew", 
+    "name": "KSWP Install Homebrew", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

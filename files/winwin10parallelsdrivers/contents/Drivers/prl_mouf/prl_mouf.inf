@@ -1,0 +1,134 @@
+;
+;
+; Installation file (.inf) for the Parallels Mouse Synchronization device.
+; Version 16.5.0.49183
+;
+; Copyright 2005-2021 Parallels International GmbH
+;
+[Version]
+Signature = "$Windows NT$"
+Class = Mouse
+ClassGuid = {4d36e96f-e325-11ce-bfc1-08002be10318} 
+Provider = %Parallels%
+DriverVer = 04/02/2021, 16.5.0.49183
+CatalogFile = prl_mouf_x86.cat
+CatalogFile.ntamd64 = prl_mouf_x64.cat
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+prl_mouf.sys = 1,\i386
+
+[SourceDisksFiles.amd64]
+prl_mouf.sys = 1,\amd64
+
+
+[Manufacturer]
+%Parallels% = Models, NTx86, NTamd64
+
+[Models.NTx86]
+%prl_mouf% = DDInstallPS, ACPI\PNP0F03
+%prl_mouf% = DDInstallPS, ACPI\PRL0F03
+%prl_umouf% = DDInstall, HID\VID_203A&PID_FFFC&MI_00
+
+[Models.NTamd64]
+%prl_mouf% = DDInstallPS, ACPI\PNP0F03
+%prl_mouf% = DDInstallPS, ACPI\PRL0F03
+%prl_umouf% = DDInstall, HID\VID_203A&PID_FFFC&MI_00
+
+
+[DDInstall]
+Include = MSMOUSE.INF
+Needs = HID_Mouse_Inst.NT
+CopyFiles = DDCopyFiles
+
+[DDInstall.Services]
+; Install the port driver and mouclass from msmouse.inf
+Include = MSMOUSE.INF
+Needs = HID_Mouse_Inst.NT.Services
+AddService = prl_mouf,,DDService                                          ; Filter Driver
+
+[DDInstall.HW]
+Include = MSMOUSE.INF
+Needs = HID_Mouse_Inst.NT.HW
+AddReg = DDAddReg
+
+
+
+[DDInstall.NTamd64]
+Include = MSMOUSE.INF
+Needs = HID_Mouse_Inst.NT
+CopyFiles = DDCopyFiles
+
+[DDInstall.NTamd64.Services]
+Include = MSMOUSE.INF
+Needs = HID_Mouse_Inst.NT.Services
+AddService = prl_mouf,,DDService                                           ; Filter Driver
+
+[DDInstall.NTamd64.HW]
+Include = MSMOUSE.INF
+Needs = HID_Mouse_Inst.NT.HW
+AddReg = DDAddReg
+
+
+
+[DDInstallPS]
+Include = MSMOUSE.INF
+Needs = PS2_Inst
+CopyFiles = DDCopyFiles
+
+[DDInstallPS.Services]
+Include = MSMOUSE.INF
+Needs = PS2_Inst.Services
+AddService = prl_mouf,,DDService                                                 ; Filter Driver
+
+[DDInstallPS.HW]
+Include = MSMOUSE.INF
+Needs = PS2_Inst.HW
+AddReg = DDAddReg
+
+
+
+[DDInstallPS.NTamd64]
+Include = MSMOUSE.INF
+Needs = PS2_Inst
+CopyFiles = DDCopyFiles
+
+[DDInstallPS.NTamd64.Services]
+Include = MSMOUSE.INF
+Needs = PS2_Inst.Services
+AddService = prl_mouf,,DDService                                                 ; Filter Driver
+
+[DDInstallPS.NTamd64.HW]
+Include = MSMOUSE.INF
+Needs = PS2_Inst.HW
+AddReg = DDAddReg
+
+
+
+[DestinationDirs]
+DDCopyFiles = 12
+
+[DDCopyFiles]
+prl_mouf.sys,,,0x2006
+
+[DDService]
+DisplayName = %prl_mouf%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+LoadOrderGroup = Pointer Port
+ServiceBinary = %12%\prl_mouf.sys
+
+[DDAddReg]
+HKR,, "UpperFilters", %REG_MULTI_SZ%, "prl_mouf"
+
+
+[Strings]
+REG_MULTI_SZ = 0x00010000
+
+Parallels = "Parallels"
+Disk1 = "Parallels Tools Installation Disk"
+prl_mouf = "Parallels Mouse Synchronization Device"
+prl_umouf = "Parallels USB Mouse Synchronization Device"

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "26932440-b741-4f26-a206-9aef54774882", 
+    "interpreter": 1, 
+    "key": "ksploadwindowsiso", 
+    "name": "KSP Load Windows ISO", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

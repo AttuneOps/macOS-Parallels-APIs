@@ -1,0 +1,11 @@
+DIR='$HOME/Parallels/homebrew'
+
+if [[ -d ${DIR} ]]
+then
+    echo "Homebrew is already installed in ${DIR}. Skipping."
+else
+    echo "Installing homebrew."
+    mkdir -pv ${DIR}
+    curl -L https://github.com/Homebrew/brew/tarball/master | \
+        tar xz --strip 1 -C ${DIR}
+fi

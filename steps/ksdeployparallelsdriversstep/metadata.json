@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "stop", 
+    "archiveKey": "winwin10parallelsdrivers", 
+    "deployPath": "{ksParallelsAttuneBaseDir}/build-{targetServer.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "7de50a2b-cf4e-4944-be5c-fb61c0011b41", 
+    "key": "ksdeployparallelsdriversstep", 
+    "name": "KS Deploy Parallels Drivers (Step)", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": true
+}

@@ -1,0 +1,5 @@
+export PATH="$HOME/Parallels/homebrew/bin:$PATH"
+echo "Using $(which brew)"
+
+echo "Installing xorriso"
+brew install xorriso

@@ -1,0 +1,14 @@
+for profile in ~/.bashrc ~/.bash_profile
+do
+    if grep xorriso ${profile}
+    then
+        echo "Removing existing xorriso alias from ${profile}"
+        sed -i '/xorriso/d' ${profile}
+    fi
+    
+    echo "Adding genisoimage / makeisofs alias to ${profile}"
+    
+    cat <<'EOF' >>  ${profile}
+    alias genisoimage="$HOME/Parallels/homebrew/bin/xorriso -as mkisofs"
+EOF
+done

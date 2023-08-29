@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "ce211ecd-f5e6-4526-a237-bc9e574d47a4", 
+    "interpreter": 1, 
+    "key": "cpvvssetvmclipboardsettings", 
+    "name": "CPVVS Set VM Clipboard Settings", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

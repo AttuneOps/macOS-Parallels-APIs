@@ -1,0 +1,59 @@
+;
+;
+; Installation file (.inf) for the Parallels Boot Camp Driver.
+; Version 16.5.0.49183
+;
+; Copyright 2005-2021 Parallels International GmbH
+;
+[Version]
+Signature = "$Windows NT$"
+Class = System
+ClassGuid = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider = %Parallels%
+DriverVer = 04/02/2021, 16.5.0.49183
+CatalogFile = prl_boot_x86.cat
+CatalogFile.ntamd64 = prl_boot_x64.cat
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+prl_boot.sys = 1,\i386
+
+[SourceDisksFiles.amd64]
+prl_boot.sys = 1,\amd64
+
+
+[DefaultInstall]
+CopyFiles = DDCopyFiles
+
+[DefaultInstall.Services]
+AddService = prl_boot,,DDService
+
+
+[DefaultInstall.NTamd64]
+CopyFiles = DDCopyFiles
+
+[DefaultInstall.NTamd64.Services]
+AddService = prl_boot,,DDService
+
+
+[DestinationDirs]
+DDCopyFiles = 12
+
+[DDCopyFiles]
+prl_boot.sys,,,0x16006
+
+[DDService]
+ServiceType = 1
+StartType = 1
+ErrorControl = 1
+ServiceBinary = %12%\prl_boot.sys
+AddReg = DDAddReg
+
+[DDAddReg]
+HKR,,Group,,"Streams Drivers"
+
+[Strings]
+Parallels = "Parallels"
+Disk1 = "Parallels Tools Installation Disk"

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "8fcbd4f0-150a-44af-a2db-1681be7a42c1", 
+    "interpreter": 1, 
+    "key": "cpvvsenablekeyboardoptimisation", 
+    "name": "CPVVS Enable keyboard optimisation", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,9 @@
+VM='{targetServer.name}'
+
+DIR="{ksParallelsAttuneBaseDir}/build-{targetServer.fqn}"
+
+prlctl set "${VM}" \
+    --device-add cdrom \
+    --image "${DIR}/Drivers.iso" \
+    --enable \
+    --connect

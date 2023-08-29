@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "1b84e9e6-2841-48bf-b23f-9c1b08512b06", 
+    "interpreter": 1, 
+    "key": "cpvvsshutdownvm", 
+    "name": "CPVVS Shutdown VM", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

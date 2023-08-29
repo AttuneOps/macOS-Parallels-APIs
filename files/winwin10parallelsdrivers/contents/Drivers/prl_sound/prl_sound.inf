@@ -1,0 +1,571 @@
+;;
+;; Copyright 2005-2021 Parallels International GmbH
+;;
+;; Module Name: prl_sound.inf
+;;
+;; Version: 16.5.0.49183
+;;
+;; Abstract: INF file for installing Parallels Audio Driver
+
+[Version]
+Signature="$Windows NT$"
+Class=MEDIA
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%Parallels%
+DriverVer=04/02/2021, 16.5.0.49183
+CatalogFile=prl_sound_x32.cat
+CatalogFile.ntamd64=prl_sound_x64.cat
+
+
+[SourceDisksNames]
+222=%DiskDescription%,,,
+
+
+[SourceDisksFiles]
+prl_sound.sys=222,\i386
+
+
+[SourceDisksFiles.x86]
+prl_sound.sys=222,\i386
+
+
+[SourceDisksFiles.amd64]
+prl_sound.sys=222,\amd64
+
+
+[SignatureAttributes]
+prl_sound.sys=SignatureAttributes.DRM
+
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+
+[Manufacturer]
+%Parallels%=Models,NTx86,NTamd64,NTx86.6.0,NTamd64.6.0,NTx86.6.1,NTamd64.6.1,NTx86.6.2,NTamd64.6.2
+
+
+[ControlFlags]
+;ExcludeFromSelect = *
+
+
+[Models]
+; Win 9x/2000
+%PRL_SOUND.DeviceDesc%=PRL_SOUND, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+
+[Models.NTx86]
+; Win XP
+%PRL_SOUND.DeviceDesc%=PRL_SOUND, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND, PCI\VEN_1022&DEV_746D&SUBSYS_04001AB8
+
+[Models.NTamd64]
+; Win XP x64
+%PRL_SOUND.DeviceDesc%=PRL_SOUND, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND, PCI\VEN_1022&DEV_746D&SUBSYS_04001AB8
+
+[Models.NTx86.6.0]
+; Vista
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.60, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.60, PCI\VEN_1022&DEV_746D&SUBSYS_04001AB8
+
+[Models.NTamd64.6.0]
+; Vista x64
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.60, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.60, PCI\VEN_1022&DEV_746D&SUBSYS_04001AB8
+
+[Models.NTx86.6.1]
+; Win7
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.61, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.61, PCI\VEN_1022&DEV_746D&SUBSYS_04001AB8
+
+[Models.NTamd64.6.1]
+; Win7 x64
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.61, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.61, PCI\VEN_1022&DEV_746D&SUBSYS_04001AB8
+
+[Models.NTx86.6.2]
+; Win8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.62, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.62, PCI\VEN_1022&DEV_746D&SUBSYS_04001AB8
+
+[Models.NTamd64.6.2]
+; Win8 x64
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.62, PCI\VEN_8086&DEV_2445&SUBSYS_04001AB8
+%PRL_SOUND.DeviceDesc%=PRL_SOUND.62, PCI\VEN_1022&DEV_746D&SUBSYS_04001AB8
+
+
+[DestinationDirs]
+PRL_SOUND.CopyList=12
+
+
+[PRL_SOUND.CopyList]
+prl_sound.sys,,,0x2006
+
+
+[PRL_SOUND.I.Wave]
+AddReg=PRL_SOUND.I.Wave.AddReg
+
+
+[PRL_SOUND.I.Wave.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%PRL_SOUND.Wave.szPname%
+
+
+[PRL_SOUND.I.Topo]
+AddReg=PRL_SOUND.I.Topo.AddReg
+
+[PRL_SOUND.I.6X.Topo]
+DelReg=SysFx.DelReg, EPProp.DelReg
+AddReg=PRL_SOUND.I.Topo.AddReg, SysFx.AddReg, EPProp.AddReg
+
+
+[PRL_SOUND.I.Topo.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%PRL_SOUND.Topo.szPname%
+
+
+[PRL_SOUND_Service_Inst]
+DisplayName   = %PRL_SOUND.DeviceDesc%
+ServiceType   = 1                  ; SERVICE_KERNEL_DRIVER
+StartType     = 3                  ; SERVICE_DEMAND_START
+ErrorControl  = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\prl_sound.sys
+AddReg=PRL_SOUND_SERVICE.AddReg
+DelReg=PRL_SOUND_SERVICE.DelReg
+
+
+[PRL_SOUND.AddReg]
+HKR,,AssociatedFilters,,"wdmaud,swmidi,redbook"
+HKR,,Driver,,prl_sound.sys
+HKR,,NTMPDriver,,"prl_sound.sys,sbemul.sys"
+HKR,Drivers,SubClasses,,"wave,midi,mixer,aux"
+HKR,Drivers\wave\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\wave\wdmaud.drv,Description,,%PRL_SOUND.DeviceDesc%
+HKR,Drivers\midi\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\midi\wdmaud.drv, Description,,%PRL_SOUND.DeviceDesc%
+HKR,Drivers\mixer\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\mixer\wdmaud.drv,Description,,%PRL_SOUND.DeviceDesc%
+HKR,Drivers\aux\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\aux\wdmaud.drv,Description,,%PRL_SOUND.DeviceDesc%
+
+
+[PRL_SOUND_NAMES.AddReg]
+HKLM,%MediaCategories%\%PRL_SOUND.NameGuid%,Name,,%PRL_SOUND.Name%
+
+
+[PRL_SOUND_SEC.AddReg]
+; FILE_DEVICE_SOUND
+HKR,,DeviceType,0x10001,0x0000001D
+; SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RWX_RES_RWX
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GRGWGX;;;BA)(A;;GRGWGX;;;WD)(A;;GRGWGX;;;RC)"
+
+
+[PRL_SOUND_OEM.AddReg]
+HKR,Settings,SpeakersMap,0x00010001,0x00000003  ; stereo
+;HKR,Settings,SpeakersMap,0x00010001,0x00000033  ; quadraphonic
+;HKR,Settings,SpeakersMap,0x00010001,0x0000060f  ; 5.1
+;HKR,Settings,SpeakersMap,0x00010001,0x0000063f  ; 7.1
+
+;HKR,Settings,SpeakerGeometry,0x00010001,0xffffffff  ; "headphone"
+HKR,Settings,SpeakerGeometry,0x00010001,0x00000014  ; "wide"
+;HKR,Settings,SpeakerGeometry,0x00010001,0x0000000a  ; "narrow"
+
+HKR,Settings,RecordVolumeL,0x00010001,0x00168000  ; +22.5 dB gain
+HKR,Settings,RecordVolumeR,0x00010001,0x00168000
+HKR,Settings,PlaybackVolumeFL,0x00010001,0        ; 0 dB attenuation
+HKR,Settings,PlaybackVolumeFR,0x00010001,0
+HKR,Settings,PlaybackVolumeFC,0x00010001,0
+HKR,Settings,PlaybackVolumeLFE,0x00010001,0
+HKR,Settings,PlaybackVolumeBL,0x00010001,0
+HKR,Settings,PlaybackVolumeBR,0x00010001,0
+HKR,Settings,PlaybackVolumeSL,0x00010001,0
+HKR,Settings,PlaybackVolumeSR,0x00010001,0
+
+HKR,Settings,RecordMute,0x00010001,0    ; FALSE
+HKR,Settings,PlaybackMute,0x00010001,0
+
+
+; section below is template (not used)
+;[PRL_SOUND_CAPS.AddReg]
+;HKR,OverrideCaps,DAC_4CH,0x00010001,0
+;HKR,OverrideCaps,DAC_6CH,0x00010001,0
+;HKR,OverrideCaps,DAC_8CH,0x00010001,0
+;HKR,OverrideCaps,DAC_CH_MAX,0x00010001,8
+;HKR,OverrideCaps,DAC_RATE_8K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_11K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_16K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_22K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_24K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_32K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_44K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_48K,0x00010001,1
+;HKR,OverrideCaps,DAC_RATE_64K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_88K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_96K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_128K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_176K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_192K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_256K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_352K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_384K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_MIN,0x00010001,8000
+;HKR,OverrideCaps,DAC_RATE_MAX,0x00010001,384000
+;HKR,OverrideCaps,DAC_PCM20,0x00010001,0
+;HKR,OverrideCaps,DAC_PCM24,0x00010001,0
+;HKR,OverrideCaps,DAC_PCM32,0x00010001,0
+;HKR,OverrideCaps,DAC_PCM_BITS_MAX,0x00010001,32
+;HKR,OverrideCaps,ADC_RATE_8K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_11K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_16K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_22K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_24K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_32K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_44K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_48K,0x00010001,1
+;HKR,OverrideCaps,ADC_RATE_64K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_88K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_96K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_128K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_176K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_192K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_256K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_352K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_384K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_MIN,0x00010001,8000
+;HKR,OverrideCaps,ADC_RATE_MAX,0x00010001,384000
+;HKR,OverrideCaps,IGNORE_PICB,0x00010001,0  ; bitmask: 0x01 - capture, 0x02 playback
+;HKR,OverrideCaps,WAVERT_MODE,0x00010001,0  ; 0 - disabled, 1 - enabled
+;HKR,OverrideCaps,MIC_IN_LINEIN,0x00010001,1  ; 1 - "plug" Mic into Line-In (change type)
+;HKR,OverrideCaps,CHIPSET_DELAY,0x00010001,0
+;HKR,OverrideCaps,CODEC_DELAY,0x00010001,0
+;HKR,OverrideCaps,FIFO_SIZE,0x00010001,1
+
+[PRL_SOUND_CAPS.XP.AddReg]
+; disable this rates due bugs in resampler(a.k.a USB/THB issue)
+HKR,OverrideCaps,DAC_RATE_8K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_11K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_16K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_22K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_24K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_32K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_44K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_48K,0x00010001,1
+HKR,OverrideCaps,DAC_RATE_64K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_88K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_96K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_128K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_176K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_192K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_256K,0x00010001,0
+HKR,OverrideCaps,DAC_RATE_352K,0x00010001,0
+;HKR,OverrideCaps,DAC_RATE_384K,0x00010001,0
+
+HKR,OverrideCaps,ADC_RATE_8K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_11K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_16K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_22K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_24K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_32K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_44K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_48K,0x00010001,1
+HKR,OverrideCaps,ADC_RATE_64K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_88K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_96K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_128K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_176K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_192K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_256K,0x00010001,0
+HKR,OverrideCaps,ADC_RATE_352K,0x00010001,0
+;HKR,OverrideCaps,ADC_RATE_384K,0x00010001,0
+
+; limit extended formats until DataRangeIntersection() logic fixed for XP
+HKR,OverrideCaps,DAC_RATE_MAX,0x00010001,48000
+HKR,OverrideCaps,ADC_RATE_MAX,0x00010001,48000
+HKR,OverrideCaps,DAC_PCM20,0x00010001,0
+HKR,OverrideCaps,DAC_PCM24,0x00010001,0
+HKR,OverrideCaps,DAC_PCM32,0x00010001,0
+;HKR,OverrideCaps,DAC_4CH,0x00010001,0
+;HKR,OverrideCaps,DAC_6CH,0x00010001,0
+;HKR,OverrideCaps,DAC_8CH,0x00010001,0
+
+
+[PRL_SOUND_CAPS.60.AddReg]
+HKR,OverrideCaps,WAVERT_MODE,0x00010001,1  ; 0 - disabled, 1 - enabled
+HKR,OverrideCaps,FIFO_SIZE,0x00010001,16  ; in samples
+
+
+[PRL_SOUND_CAPS.61.AddReg]
+HKR,OverrideCaps,WAVERT_MODE,0x00010001,1  ; 0 - disabled, 1 - enabled
+HKR,OverrideCaps,FIFO_SIZE,0x00010001,16  ; in samples
+
+
+[PRL_SOUND_CAPS.62.AddReg]
+HKR,OverrideCaps,WAVERT_MODE,0x00010001,1  ; 0 - disabled, 1 - enabled
+HKR,OverrideCaps,FIFO_SIZE,0x00010001,16  ; in samples
+
+
+[PRL_SOUND.DelReg]
+HKR,Settings
+HKR,OverrideCaps
+
+
+[PRL_SOUND_SERVICE.AddReg]
+; NOTE: LogLevel work only with debug driver !!!
+HKR,LogLevel,Print,0x00010001,1
+HKR,LogLevel,Warning,0x00010001,1
+HKR,LogLevel,Error,0x00010001,1
+HKR,LogLevel,FuncEnter,0x00010001,1
+HKR,LogLevel,KCOM,0x00010001,1
+HKR,LogLevel,Power,0x00010001,1
+HKR,LogLevel,Stream,0x00010001,0
+HKR,LogLevel,KSFormat,0x00010001,0
+HKR,LogLevel,DMA,0x00010001,0
+HKR,LogLevel,IRQ,0x00010001,0
+HKR,LogLevel,Config,0x00010001,1
+HKR,LogLevel,HWReg,0x00010001,0
+HKR,LogLevel,ALock,0x00010001,0
+HKR,LogLevel,Property,0x00010001,1
+HKR,LogLevel,Internal,0x00010001,0
+
+
+[PRL_SOUND_SERVICE.DelReg]
+HKR,LogLevel
+
+
+[SysFx.AddReg]
+; use MS APO:
+HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_ANY%  ; GUID NULL means install on all endpoints
+HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%MS_SYSFX_PREMIX_CLSID%
+HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%MS_SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_FX_UiClsid%,,%MS_SYSFX_UI_CLSID%
+HKR,"FX\\0",%PKEY_DisplayName%,,%MS_SYSFX_FriendlyName%
+HKR,"FX\\0",%PKEY_ItemNameDisplay%,,%MS_SYSFX_FriendlyName%
+
+[SysFx.DelReg]
+HKR,FX
+
+
+[EPProp.AddReg]
+HKR,"EP\\0",%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_ANY%
+HKR,"EP\\0",%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+
+[EPProp.DelReg]
+HKR,EP
+
+
+[PRL_SOUND]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.XP.AddReg
+DelReg=PRL_SOUND.DelReg
+
+[PRL_SOUND.NTx86]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.XP.AddReg
+DelReg=PRL_SOUND.DelReg
+
+[PRL_SOUND.60.NTx86]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration, mssysfx.CopyFilesAndRegister
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.60.AddReg
+DelReg=PRL_SOUND.DelReg
+
+[PRL_SOUND.61.NTx86]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration, mssysfx.CopyFilesAndRegister
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.61.AddReg
+DelReg=PRL_SOUND.DelReg
+
+[PRL_SOUND.62.NTx86]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration, mssysfx.CopyFilesAndRegister
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.62.AddReg
+DelReg=PRL_SOUND.DelReg
+
+[PRL_SOUND.NTamd64]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.XP.AddReg
+DelReg=PRL_SOUND.DelReg
+
+[PRL_SOUND.60.NTamd64]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration, mssysfx.CopyFilesAndRegister
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.60.AddReg
+DelReg=PRL_SOUND.DelReg
+
+[PRL_SOUND.61.NTamd64]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration, mssysfx.CopyFilesAndRegister
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.61.AddReg
+DelReg=PRL_SOUND.DelReg
+
+[PRL_SOUND.62.NTamd64]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration, mssysfx.CopyFilesAndRegister
+CopyFiles=PRL_SOUND.CopyList
+AddReg=PRL_SOUND.AddReg, PRL_SOUND_NAMES.AddReg, PRL_SOUND_OEM.AddReg, PRL_SOUND_CAPS.62.AddReg
+DelReg=PRL_SOUND.DelReg
+
+
+[PRL_SOUND.NTx86.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,PRL_SOUND.I.Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology%,PRL_SOUND.I.Topo
+
+[PRL_SOUND.NTamd64.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,PRL_SOUND.I.Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology%,PRL_SOUND.I.Topo
+
+[PRL_SOUND.60.NTx86.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+
+[PRL_SOUND.60.NTamd64.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+
+[PRL_SOUND.61.NTx86.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+
+[PRL_SOUND.61.NTamd64.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+
+[PRL_SOUND.62.NTx86.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+
+[PRL_SOUND.62.NTamd64.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,PRL_SOUND.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology%,PRL_SOUND.I.6X.Topo
+
+
+[PRL_SOUND.NTx86.Services]
+AddService = prl_sound, 0x00000002, PRL_SOUND_Service_Inst
+
+[PRL_SOUND.NTamd64.Services]
+AddService = prl_sound, 0x00000002, PRL_SOUND_Service_Inst
+
+[PRL_SOUND.60.NTx86.Services]
+AddService = prl_sound, 0x00000002, PRL_SOUND_Service_Inst
+
+[PRL_SOUND.60.NTamd64.Services]
+AddService = prl_sound, 0x00000002, PRL_SOUND_Service_Inst
+
+[PRL_SOUND.61.NTx86.Services]
+AddService = prl_sound, 0x00000002, PRL_SOUND_Service_Inst
+
+[PRL_SOUND.61.NTamd64.Services]
+AddService = prl_sound, 0x00000002, PRL_SOUND_Service_Inst
+
+[PRL_SOUND.62.NTx86.Services]
+AddService = prl_sound, 0x00000002, PRL_SOUND_Service_Inst
+
+[PRL_SOUND.62.NTamd64.Services]
+AddService = prl_sound, 0x00000002, PRL_SOUND_Service_Inst
+
+
+[PRL_SOUND.NTx86.HW]
+AddReg = PRL_SOUND_SEC.AddReg
+
+[PRL_SOUND.NTamd64.HW]
+AddReg = PRL_SOUND_SEC.AddReg
+
+[PRL_SOUND.60.NTx86.HW]
+AddReg = PRL_SOUND_SEC.AddReg
+
+[PRL_SOUND.60.NTamd64.HW]
+AddReg = PRL_SOUND_SEC.AddReg
+
+[PRL_SOUND.61.NTx86.HW]
+AddReg = PRL_SOUND_SEC.AddReg
+
+[PRL_SOUND.61.NTamd64.HW]
+AddReg = PRL_SOUND_SEC.AddReg
+
+[PRL_SOUND.62.NTx86.HW]
+AddReg = PRL_SOUND_SEC.AddReg
+
+[PRL_SOUND.62.NTamd64.HW]
+AddReg = PRL_SOUND_SEC.AddReg
+
+;======================================================
+; COMMON
+;======================================================
+[Strings]
+Parallels="Parallels"
+
+DiskDescription="Parallels Tools Installation Disk"
+
+PRL_SOUND.DeviceDesc       ="Parallels Audio Controller"
+
+PRL_SOUND.Wave.szPname="Parallels Sound Card"
+PRL_SOUND.Topo.szPname="Parallels Mixer"
+
+
+Proxy.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER="{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_TOPOLOGY="{DDA54A40-1E4C-11D1-A050-405705C10000}"
+
+KSNAME_Wave="Wave"
+KSNAME_Topology="Topology"
+
+MediaCategories="SYSTEM\CurrentControlSet\Control\MediaCategories"
+
+PRL_SOUND.NameGuid="{946A7B1A-EBBC-422a-A81F-F07C8D40D3B4}"
+PRL_SOUND.Name="Parallels Audio Controller"
+
+;Information for FX
+PKEY_FX_Association  = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},0"
+PKEY_FX_PreMixClsid  = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},1"
+PKEY_FX_PostMixClsid = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},2"
+PKEY_FX_UiClsid      = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},3"
+PKEY_DisplayName     = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},4"
+PKEY_ItemNameDisplay = "{B725F130-47EF-101A-A5F1-02608C9EEBAC},10"
+
+KSNODETYPE_ANY           = "{00000000-0000-0000-0000-000000000000}"
+
+MS_SYSFX_UI_CLSID        = "{5860E1C5-F95C-4a7a-8EC8-8AEF24F379A1}"
+MS_SYSFX_PREMIX_CLSID    = "{62dc1a93-ae24-464c-a43e-452f824c4250}"
+MS_SYSFX_POSTMIX_CLSID   = "{637c490d-eee3-4c0a-973f-371958802da2}"
+MS_SYSFX_FriendlyName    = "Microsoft Audio Home Theater Effects"
+
+;Information for EP
+PKEY_AudioEndpoint_Association               = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
+PKEY_AudioEndpoint_Supports_EventDriven_Mode = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},7"

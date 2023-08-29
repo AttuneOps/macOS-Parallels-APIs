@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "d1727047-b815-4e3c-88fd-925e3b3bb5d3", 
+    "isBlueprint": true, 
+    "key": "kscheckmacosforisobuilding", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "kscheckforgenisoimgalias"
+        }
+    ], 
+    "name": "KS Check macOS for ISO Building", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

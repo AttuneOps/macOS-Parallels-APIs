@@ -1,0 +1,5 @@
+VM='{targetServer.name}'
+
+echo "Disabling sound support"
+
+prlctl set "${VM}" --device-del sound0 

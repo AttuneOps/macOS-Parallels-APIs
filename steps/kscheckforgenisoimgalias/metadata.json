@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "f26f017b-5fe3-4fa2-b3a0-dabc048d64b6", 
+    "interpreter": 1, 
+    "key": "kscheckforgenisoimgalias", 
+    "name": "KS Check for genisoimg Alias", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

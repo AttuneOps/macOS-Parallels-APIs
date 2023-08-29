@@ -1,0 +1,29 @@
+export PATH="$HOME/Parallels/homebrew/bin:$PATH"
+
+printError() {
+cat <<EOF
+Please find the KS Setup macOS for ISO Building blueprint
+ from the macOS Parallels APIs project to run it to setup this
+mac for ISO building
+EOF
+}
+
+
+if which xorriso
+then
+    echo "SUCCESS - xorriso is installed"
+else
+    echo "FAILED - Failed to find xorriso"
+    printError()
+    false
+fi
+
+
+if genisoimage | grep xorriso
+then
+    echo "SUCCESS - The genisoimage alias works"
+else
+    echo "FAILED - The genisoimage does not work"
+    printError()
+    false
+fi

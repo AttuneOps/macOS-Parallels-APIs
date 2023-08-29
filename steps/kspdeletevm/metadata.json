@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "f5b6abdf-85bb-4dbb-95cd-59d65e013907", 
+    "interpreter": 1, 
+    "key": "kspdeletevm", 
+    "name": "KSP Delete VM", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

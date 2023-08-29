@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "74b7a8d6-56b0-4969-8645-420c7447250f", 
+    "key": "ksparallelsostype", 
+    "name": "KS Parallels OS Type", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

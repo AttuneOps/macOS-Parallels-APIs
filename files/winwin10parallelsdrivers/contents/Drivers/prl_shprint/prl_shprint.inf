@@ -1,0 +1,43 @@
+;
+;
+; Installation file (.inf) for the Parallels Shared printer.
+; Version 16.5.0.49183
+;
+; Copyright 2005-2021 Parallels International GmbH
+;
+[Version]
+Signature = "$Windows NT$"
+Provider = "Parallels"
+ClassGUID = {4D36E979-E325-11CE-BFC1-08002BE10318}
+Class = Printer
+DriverVer = 04/02/2021, 16.5.0.49183
+CatalogFile = prl_shprint_x86.cat
+CatalogFile.ntamd64 = prl_shprint_x64.cat
+
+[Manufacturer]
+"Parallels" = Parallels,NTamd64
+
+[Parallels]
+"Parallels Shared Printer" = prlprint.ppd,ParallelsParallels_S5D2D
+
+[Parallels.NTamd64]
+"Parallels Shared Printer" = prlprint.ppd,ParallelsParallels_S5D2D
+
+[prlprint.ppd]
+Include = NTPRINT.INF
+CopyFiles = @prlprint.ppd
+DataSection = PSCRIPT_DATA
+DataFile = prlprint.ppd
+Needs = PSCRIPT.OEM
+
+[DestinationDirs]
+DefaultDestDir = 66000
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+prlprint.ppd = 1
+
+[Strings]
+Disk1 = "Parallels Tools Installation Disk"

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "ed0e2eb8-9e81-4340-8ea8-39b4ea4565f8", 
+    "interpreter": 1, 
+    "key": "kswpaliasxorriso", 
+    "name": "KSWP Alias xorriso", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

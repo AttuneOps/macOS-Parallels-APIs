@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "6712ad07-4faf-4533-99c6-81700772c7de", 
+    "interpreter": 1, 
+    "key": "cpvvssetfullscreensettings", 
+    "name": "CPVVS Set Fullscreen Settings", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "374ab06e-b626-437c-a08b-2b3931779e56", 
+    "key": "parallelshost", 
+    "name": "Parallels Host", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinuxServer"
+}

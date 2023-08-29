@@ -1,0 +1,93 @@
+;
+;
+; Installation file (.inf) for the Parallels Ethernet Adapter.
+; Version 16.5.0.49183
+;
+; Copyright 2005-2021 Parallels International GmbH
+;
+[Version]
+Signature = "$Windows NT$"
+Class = Net
+ClassGuid = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider = %Parallels%
+DriverVer = 04/02/2021, 16.5.0.49183
+CatalogFile = prl_eth5_x86.cat
+CatalogFile.ntamd64 = prl_eth5_x64.cat
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+prl_eth5.sys = 1,\i386
+;prl_eth5.sys = 1,\98
+;
+;[SourceDisksFiles.x86]
+;prl_eth5.sys = 1,\i386
+
+[SourceDisksFiles.amd64]
+prl_eth5.sys = 1,\amd64
+
+
+[Manufacturer]
+%Parallels% = Models, NTx86, NTamd64
+
+[Models]
+%prl_eth% = DDInstall, PCI\VEN_10EC&DEV_8029
+%prl_eth_r% = DDInstall, PCI\VEN_10EC&DEV_8029&SUBSYS_04001AB8
+
+[Models.NTx86]
+%prl_eth% = DDInstall, PCI\VEN_10EC&DEV_8029
+%prl_eth_r% = DDInstall, PCI\VEN_10EC&DEV_8029&SUBSYS_04001AB8
+
+[Models.NTamd64]
+%prl_eth% = DDInstall, PCI\VEN_10EC&DEV_8029
+%prl_eth_r% = DDInstall, PCI\VEN_10EC&DEV_8029&SUBSYS_04001AB8
+
+
+[DDInstall]
+AddReg = DDAddReg
+DelReg = DDDelReg
+CopyFiles = DDCopyFiles
+BusType = 5
+Characteristics = 4
+
+[DDInstall.Services]
+AddService = prl_eth5,2,DDService
+
+
+[DDInstall.NTamd64]
+AddReg = DDAddReg
+CopyFiles = DDCopyFiles
+BusType = 5
+Characteristics = 4
+
+[DDInstall.NTamd64.Services]
+AddService = prl_eth5,2,DDService
+
+[DestinationDirs]
+DDCopyFiles = 12
+
+[DDCopyFiles]
+prl_eth5.sys,,,0x2006
+
+[DDService]
+DisplayName = %prl_eth%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+LoadOrderGroup = NDIS
+ServiceBinary = %12%\prl_eth5.sys
+
+[DDAddReg]
+HKR, Ndi, Service, 0, "prl_eth5"
+HKR, Ndi\Interfaces, UpperRange, 0, "ndis5"
+HKR, Ndi\Interfaces, LowerRange, 0, "ethernet"
+
+[DDDelReg]
+HKR, NDI\Params
+
+[Strings]
+Parallels = "Parallels"
+Disk1 = "Parallels Tools Installation Disk"
+prl_eth = "Parallels Ethernet Adapter"
+prl_eth_r = "Parallels Ethernet Adapter"

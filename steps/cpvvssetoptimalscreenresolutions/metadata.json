@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "ae0e2b96-739b-4462-a651-6190c57ce244", 
+    "interpreter": 1, 
+    "key": "cpvvssetoptimalscreenresolutions", 
+    "name": "CPVVS Set optimal screen resolutions", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

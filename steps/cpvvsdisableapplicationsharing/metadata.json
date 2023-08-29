@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "78352ced-0260-4a3e-95b4-425ebe4756bf", 
+    "interpreter": 1, 
+    "key": "cpvvsdisableapplicationsharing", 
+    "name": "CPVVS Disable Application Sharing", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

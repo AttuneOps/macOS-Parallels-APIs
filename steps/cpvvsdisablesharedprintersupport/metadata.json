@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "c8d615b6-4683-48a8-a10e-0ee01b0a8a18", 
+    "interpreter": 1, 
+    "key": "cpvvsdisablesharedprintersupport", 
+    "name": "CPVVS Disable Shared Printer Support", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
