@@ -437,7 +437,7 @@ ssh {macoshostuser}@{macoshost}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{targetServer.name}&#x27;
+VM=&#x27;{kickstartedNode.name}&#x27;
 
 echo &quot;Shutting down ${VM}&quot;
 prlctl stop &quot;${VM}&quot;
@@ -494,7 +494,7 @@ prlctl stop &quot;${VM}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{targetServer.name}&#x27;
+VM=&#x27;{kickstartedNode.name}&#x27;
 set -x
 
 
@@ -557,10 +557,12 @@ prlctl set &quot;${VM}&quot; --device-del cdrom1
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{ksParallelsAttuneBaseDir}/build-{targetServer.fqn}&quot;
+ksParallelsAttuneBaseDir=&quot;${HOME}/Parallels/os_auto_install&quot;
+
+DIR=&quot;${ksParallelsAttuneBaseDir}/build-{kickstartedNode.fqn}&quot;
 [[ ! -d ${DIR} ]] || rm -rfv ${DIR}
 
-ISO=&quot;{ksParallelsAttuneBaseDir}/kickstart_{targetServer.fqn}.iso&quot;
+ISO=&quot;${ksParallelsAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso&quot;
 [[ ! -f ${ISO} ]] || rm -fv ${ISO}
                 </code>
             </pre>

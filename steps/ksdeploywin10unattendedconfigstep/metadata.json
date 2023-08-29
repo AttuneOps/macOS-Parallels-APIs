@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "win10parallelsunattendedconfig", 
-    "deployPath": "{ksParallelsAttuneBaseDir}/build-{targetServer.fqn}", 
+    "deployPath": "${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "0895811a-cce0-48c4-923d-9b5dd7395b4c", 
     "key": "ksdeploywin10unattendedconfigstep", 
@@ -21,7 +21,7 @@
         }, 
         {
             "name": "targetServer", 
-            "parameterKey": "targetserver", 
+            "parameterKey": "kickstartednode", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {

@@ -90,15 +90,15 @@ This Project contains the following Blueprints.
 | KS Parallels OS Type | Text | `ksparallelsostype` |  |
 | KS: VM CPU Count | Text | `ksvmcpucount` |  |
 | KS: VM Ram Size GB | Text | `ksvmramsizegb` |  |
-| Target Server | Basic Node | `targetserver` |  |
 | KS: Windows Interface Alias | Text | `kswindowsinterfacealias` | oVirt = "Ethernet"<br>ESXi = "Ethernet0"<br>Parallels = "Ethernet"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
 | Target Server: Windows TimeZone | Text | `targetserverwindowstimezone` |  |
 | Windows: Administrator | Windows Credential | `windowsadministrator` | The windows administrator user |
 | Target Subnet | Network IPv4 Subnet | `targetsubnet` |  |
 | Kickstart Organisation Name | Text | `kickstartorganisationname` |  |
-| Target Server: Win | Windows Node | `targetserverwin` |  |
 | macOS Host | Linux/Unix Node | `macoshost` |  |
 | macOS Host User | Linux/Unix Credential | `macoshostuser` |  |
+| Kickstarted Windows Node | Windows Node | `kickstartedwindowsnode` |  |
+| Kickstarted Node | Basic Node | `kickstartednode` |  |
 
 
 

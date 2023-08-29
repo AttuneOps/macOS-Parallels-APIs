@@ -1,5 +1,7 @@
-DIR="{ksParallelsAttuneBaseDir}/build-{targetServer.fqn}"
+ksParallelsAttuneBaseDir="${HOME}/Parallels/os_auto_install"
+
+DIR="${ksParallelsAttuneBaseDir}/build-{kickstartedNode.fqn}"
 [[ ! -d ${DIR} ]] || rm -rfv ${DIR}
 
-ISO="{ksParallelsAttuneBaseDir}/kickstart_{targetServer.fqn}.iso"
+ISO="${ksParallelsAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso"
 [[ ! -f ${ISO} ]] || rm -fv ${ISO}

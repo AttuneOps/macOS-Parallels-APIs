@@ -1,2 +1,2 @@
-cd "${HOME}/Parallels/os_auto_install/build-{targetServer.fqn}"
+cd "${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}"
 mv -v $(ls) kickstart.iso
