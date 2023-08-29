@@ -480,13 +480,13 @@ ssh {macoshostuser}@{macoshost}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
-echo  &quot;Deleting VM : ${VM}&quot;
 if prlctl list &quot;${VM}&quot;
 then
     echo &quot;VM Found&quot;
     
+    echo  &quot;Deleting VM : ${VM}&quot;
     if prlctl delete &quot;${VM}&quot;
     then  
         echo &quot;Success&quot;
@@ -550,7 +550,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 set -x
 
 # Create the VM
@@ -620,7 +620,7 @@ prlctl set &quot;${VM}&quot; --size 51200
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 DIR=&quot;${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}&quot;
 
@@ -685,7 +685,7 @@ prlctl set &quot;${VM}&quot; \
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 DIR=&quot;${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}&quot;
 
@@ -776,7 +776,7 @@ prlctl set &quot;${VM}&quot; \
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Setting VM network to \&quot;Shared Network (Reccommended)\&quot;&quot;
 
@@ -834,7 +834,7 @@ prlctl set &quot;${VM}&quot; --device-set net0 --type shared
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Setting VM clipboard settings to \&quot;Shared\&quot;&quot;
 
@@ -892,7 +892,7 @@ prlctl set &quot;${VM}&quot; --shared-clipboard on
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Setting VM Fullscreen settings&quot;
 
@@ -954,7 +954,7 @@ prlctl set &quot;${VM}&quot; --fullscreen-activate-spaces-on-click off
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Shutting Down VM&quot;
 prlctl stop &quot;${VM}&quot;
@@ -1011,7 +1011,7 @@ prlctl stop &quot;${VM}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Disabling USB Support&quot;
 
@@ -1069,7 +1069,7 @@ prlctl set &quot;${VM}&quot; --device-del usb
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Disabling sound support&quot;
 
@@ -1127,7 +1127,7 @@ prlctl set &quot;${VM}&quot; --device-del sound0
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Setting the screen resolution so that it&#x27;s not taxing\
 the MAC by rendering with retina resoloution&quot;
@@ -1189,7 +1189,7 @@ prlctl set &quot;${VM}&quot; --high-resolution off
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Disabling shared printer support&quot;
 
@@ -1250,7 +1250,7 @@ prlctl set &quot;${VM}&quot; --show-host-printer-ui off
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Enabling keyboard optimisation&quot;
 
@@ -1308,7 +1308,7 @@ prlctl set &quot;${VM}&quot; --keyboard-optimize on
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Disabling shared profiles&quot;
 prlctl set &quot;${VM}&quot; --shared-profile off
@@ -1379,7 +1379,7 @@ prlctl set &quot;${VM}&quot; --smart-mount off
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 set -x
 
 prlctl set &quot;${VM}&quot; --winsystray-in-macmenu off
@@ -1444,7 +1444,7 @@ prlctl set &quot;${VM}&quot; --bounce-dock-icon-when-app-flashes off
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Starting ${VM}&quot;
 prlctl start &quot;${VM}&quot;

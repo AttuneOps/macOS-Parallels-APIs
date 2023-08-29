@@ -78,6 +78,9 @@ This Project contains the following Blueprints.
 ### Remove CD ROM Drives and Restart
 
 
+### KS Create Drivers and Answer File ISO
+
+
 
 
 
@@ -99,6 +102,10 @@ This Project contains the following Blueprints.
 | macOS Host User | Linux/Unix Credential | `macoshostuser` |  |
 | Kickstarted Windows Node | Windows Node | `kickstartedwindowsnode` |  |
 | Kickstarted Node | Basic Node | `kickstartednode` |  |
+| Parallels Host | Linux/Unix Node | `parallelshost` |  |
+| Target Server | Basic Node | `targetserver` |  |
+| KS Parallels: Homebrew Installation Dir | Text | `ksparallelshomebrewinstallationdir` | Use a subfolder of the user's home directory. Don't start with a / or a ~ |
+| Parallels Host User | Linux/Unix Credential | `parallelshostuser` |  |
 
 
 

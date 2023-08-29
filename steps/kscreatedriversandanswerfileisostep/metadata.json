@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "6547d29f-5753-4312-a458-faf2b83d23f2", 
+    "interpreter": 1, 
+    "key": "kscreatedriversandanswerfileisostep", 
+    "name": "KS Create Drivers and Answer File ISO (Step)", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "6e114f1e-543a-4106-9f5c-fbb8171eefd7", 
+    "key": "parallelshostuser", 
+    "name": "Parallels Host User", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinOsCred"
+}

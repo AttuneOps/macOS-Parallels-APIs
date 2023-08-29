@@ -1,0 +1,1 @@
+Use a subfolder of the user's home directory. Don't start with a / or a ~

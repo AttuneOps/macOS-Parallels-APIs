@@ -1,10 +1,10 @@
-VM='{kickstartedNode.name}'
+VM='{kickstartedNode.hostname}'
 
-echo  "Deleting VM : ${VM}"
 if prlctl list "${VM}"
 then
     echo "VM Found"
     
+    echo  "Deleting VM : ${VM}"
     if prlctl delete "${VM}"
     then  
         echo "Success"

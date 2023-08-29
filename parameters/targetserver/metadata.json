@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "3db5e08f-f333-4369-8674-261ecf308f7e", 
+    "key": "targetserver", 
+    "name": "Target Server", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Server"
+}

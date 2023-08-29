@@ -1,4 +1,4 @@
-VM='{kickstartedNode.name}'
+VM='{kickstartedNode.hostname}'
 
 DIR="${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}"
 

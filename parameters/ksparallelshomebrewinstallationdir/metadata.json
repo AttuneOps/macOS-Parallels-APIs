@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "0bef5d4c-b2ef-4752-bd8c-d2a7d013f90c", 
+    "key": "ksparallelshomebrewinstallationdir", 
+    "name": "KS Parallels: Homebrew Installation Dir", 
+    "showInPlan": false, 
+    "type": "c.s.s.b.phv.Text"
+}
