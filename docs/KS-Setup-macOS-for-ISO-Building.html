@@ -367,7 +367,7 @@ ssh {macoshostuser}@{macoshost}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&#x27;$HOME/Parallels/homebrew&#x27;
+DIR=&quot;$HOME/Parallels/homebrew&quot;
 
 if [[ -d ${DIR} ]]
 then
@@ -500,7 +500,7 @@ do
     echo &quot;Adding genisoimage / makeisofs alias to ${profile}&quot;
     
     cat &lt;&lt;&#x27;EOF&#x27; &gt;&gt;  ${profile}
-    alias genisoimage=&quot;$HOME/Parallels/homebrew/bin/xorriso -as mkisofs&quot;
+alias genisoimage=&quot;$HOME/Parallels/homebrew/bin/xorriso -as mkisofs&quot;
 EOF
 done
                 </code>

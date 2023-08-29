@@ -1,4 +1,4 @@
-DIR='$HOME/Parallels/homebrew'
+DIR="$HOME/Parallels/homebrew"
 
 if [[ -d ${DIR} ]]
 then

@@ -9,6 +9,6 @@ do
     echo "Adding genisoimage / makeisofs alias to ${profile}"
     
     cat <<'EOF' >>  ${profile}
-    alias genisoimage="$HOME/Parallels/homebrew/bin/xorriso -as mkisofs"
+alias genisoimage="$HOME/Parallels/homebrew/bin/xorriso -as mkisofs"
 EOF
 done
