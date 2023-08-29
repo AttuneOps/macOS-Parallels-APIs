@@ -19,7 +19,7 @@ else
 fi
 
 
-if genisoimage | grep xorriso
+if alias genisoimage | grep xorriso
 then
     echo "SUCCESS - The genisoimage alias works"
 else
