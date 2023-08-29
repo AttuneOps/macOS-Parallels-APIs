@@ -20,7 +20,7 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "kswpcleanbuildfiles"
+            "stepKey": "kscleanbuildfilesstep"
         }, 
         {
             "order": 200, 

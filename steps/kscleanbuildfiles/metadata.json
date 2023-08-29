@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "2ba1f6bc-6cb1-4b38-8996-7e5e6906af79", 
+    "isBlueprint": true, 
+    "key": "kscleanbuildfiles", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "kscleanbuildfilesstep"
+        }
+    ], 
+    "name": "KS Clean Build Files", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
