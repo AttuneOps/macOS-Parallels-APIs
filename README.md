@@ -60,28 +60,28 @@ This Project contains the following Blueprints.
 ### KS Check macOS for ISO Building
 
 
-### KS Deploy Parallels Drivers
-
-
-### KS Parallels Recreate Virtual Machine
-
-
-### KS Setup macOS for ISO Building
-
-
-### KS Rename ISO
-
-
-### KS Deploy Win10 Unattended Config
-
-
-### Remove CD ROM Drives and Restart
+### KS Clean Build Files
 
 
 ### KS Create Drivers and Answer File ISO
 
 
-### KS Clean Build Files
+### KS Deploy Parallels Drivers
+
+
+### KS Deploy Win10 Unattended Config
+
+
+### KS Parallels Recreate Virtual Machine
+
+
+### KS Rename ISO
+
+
+### KS Setup macOS for ISO Building
+
+
+### Remove CD ROM Drives and Restart
 
 
 
@@ -92,23 +92,23 @@ This Project contains the following Blueprints.
 
 | Name | Type | Script Reference | Comment |
 | ---- | ---- | ---------------- | ------- |
+| Kickstarted Node | Basic Node | `kickstartednode` |  |
+| Kickstarted Windows Node | Windows Node | `kickstartedwindowsnode` |  |
+| Kickstart Organisation Name | Text | `kickstartorganisationname` |  |
 | KS Parallels: Attune Base Dir | Text | `ksparallelsattunebasedir` | This will be a subfolder of the user's home directory. Don't start with a / or a ~ |
+| KS Parallels: Homebrew Installation Dir | Text | `ksparallelshomebrewinstallationdir` | Use a subfolder of the user's home directory. Don't start with a / or a ~ |
 | KS Parallels OS Type | Text | `ksparallelsostype` |  |
 | KS: VM CPU Count | Text | `ksvmcpucount` |  |
 | KS: VM Ram Size GB | Text | `ksvmramsizegb` |  |
 | KS: Windows Interface Alias | Text | `kswindowsinterfacealias` | oVirt = "Ethernet"<br>ESXi = "Ethernet0"<br>Parallels = "Ethernet"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
-| Target Server: Windows TimeZone | Text | `targetserverwindowstimezone` |  |
-| Windows: Administrator | Windows Credential | `windowsadministrator` | The windows administrator user |
-| Target Subnet | Network IPv4 Subnet | `targetsubnet` |  |
-| Kickstart Organisation Name | Text | `kickstartorganisationname` |  |
 | macOS Host | Linux/Unix Node | `macoshost` |  |
 | macOS Host User | Linux/Unix Credential | `macoshostuser` |  |
-| Kickstarted Windows Node | Windows Node | `kickstartedwindowsnode` |  |
-| Kickstarted Node | Basic Node | `kickstartednode` |  |
 | Parallels Host | Linux/Unix Node | `parallelshost` |  |
-| Target Server | Basic Node | `targetserver` |  |
-| KS Parallels: Homebrew Installation Dir | Text | `ksparallelshomebrewinstallationdir` | Use a subfolder of the user's home directory. Don't start with a / or a ~ |
 | Parallels Host User | Linux/Unix Credential | `parallelshostuser` |  |
+| Target Server | Basic Node | `targetserver` |  |
+| Target Server: Windows TimeZone | Text | `targetserverwindowstimezone` |  |
+| Target Subnet | Network IPv4 Subnet | `targetsubnet` |  |
+| Windows: Administrator | Windows Credential | `windowsadministrator` | The windows administrator user |
 
 
 
@@ -117,8 +117,8 @@ This Project contains the following Blueprints.
 
 | Name | Type | Comment |
 | ---- | ---- | ------- |
-| WIN Win10 Parallels Drivers | Version Controlled Files | From C:\Program Files (x86)\Parallels\Parallels Tools |
 | Win10 Parallels Unattended Config | Version Controlled Files |  |
+| WIN Win10 Parallels Drivers | Version Controlled Files | From C:\Program Files (x86)\Parallels\Parallels Tools |
 
 
 

@@ -437,7 +437,7 @@ ssh {macoshostuser}@{macoshost}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 
 echo &quot;Shutting down ${VM}&quot;
 prlctl stop &quot;${VM}&quot;
@@ -494,7 +494,7 @@ prlctl stop &quot;${VM}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-VM=&#x27;{kickstartedNode.name}&#x27;
+VM=&#x27;{kickstartedNode.hostname}&#x27;
 set -x
 
 
