@@ -75,6 +75,9 @@ This Project contains the following Blueprints.
 ### KS Deploy Win10 Unattended Config
 
 
+### KS Deploy Win2019 Unattended Config
+
+
 ### KS Parallels Recreate Virtual Machine
 
 
@@ -122,6 +125,7 @@ This Project contains the following Blueprints.
 | ---- | ---- | ------- |
 | Parallels Tools | Large Archives | Get from "/Applications/Parallels Desktop.app/Contents/Resources/Tools/prl-tools-win.iso". |
 | Win10 Parallels Unattended Config | Version Controlled Files |  |
+| Win2019 Parallels Unattended Config | Version Controlled Files |  |
 | WIN Win10 Parallels Drivers | Version Controlled Files | From C:\Program Files (x86)\Parallels\Parallels Tools |
 
 

@@ -1,12 +1,12 @@
 {
-    "actionOnStepFail": "stop", 
-    "archiveKey": "win10parallelsunattendedconfig", 
+    "actionOnStepFail": null, 
+    "archiveKey": "win2019parallelsunattendedconfig", 
     "deployPath": "${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}", 
     "enabled": true, 
-    "externalUuid4": "0895811a-cce0-48c4-923d-9b5dd7395b4c", 
-    "key": "ksdeploywin10unattendedconfigstep", 
+    "externalUuid4": "44669e53-8e09-41ed-a054-4c0b4b956274", 
+    "key": "ksdeploywin2019unattendedconfigstep", 
     "makoFileNames": [
-        "Autounattend.xml"
+        "autounattend.xml"
     ], 
     "makoParameters": [
         {
@@ -25,12 +25,12 @@
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
         {
-            "name": "targetServerWindowsTimezone", 
+            "name": "timeZone", 
             "parameterKey": "targetserverwindowstimezone", 
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
-    "name": "KS Deploy Win10 Unattended Config Step", 
+    "name": "KS Deploy Win2019 Unattended Config Step", 
     "osCredKey": "macoshostuser", 
     "serverKey": "macoshost", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"

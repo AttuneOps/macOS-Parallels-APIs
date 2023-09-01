@@ -1,0 +1,6 @@
+{
+    "externalUuid4": "ef1d62ec-4f3b-40df-baed-1ce994a6fa02", 
+    "key": "win2019parallelsunattendedconfig", 
+    "name": "Win2019 Parallels Unattended Config", 
+    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
+}

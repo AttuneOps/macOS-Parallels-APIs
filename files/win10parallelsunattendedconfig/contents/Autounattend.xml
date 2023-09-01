@@ -200,14 +200,14 @@ Notes: Enter your comments here...
 			<RegisteredOwner>${adminUser.user}</RegisteredOwner>
 			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
 			<FirstLogonCommands>
-        <!-- Enable running PowerShell scripts from file -->
+                <!-- Enable running PowerShell scripts from file -->
 				<SynchronousCommand wcm:action="add">
 					<Order>1</Order>
 					<RequiresUserInput>false</RequiresUserInput>
 					<CommandLine>PowerShell -Command "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force"</CommandLine>
 					<Description>Set PowerShell Execution Policy to Unrestricted</Description>
 				</SynchronousCommand>
-        <!-- Run ps1 file -->
+                <!-- Run ps1 file -->
 				<SynchronousCommand wcm:action="add">
 					<Order>2</Order>
 					<RequiresUserInput>false</RequiresUserInput>
