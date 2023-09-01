@@ -5,4 +5,4 @@ cd {ksParallelsAttuneBaseDir}/build-{kickstartedNode.fqn}
 
 xorriso -as mkisofs -o Drivers.iso \
     -iso-level 2  -joliet-long -relaxed-filenames \
-    -J -l -D -N -V "DRIVERS" Drivers Autounattend.xml
+    -J -l -D -N -V "DRIVERS" Drivers Autounattend.xml custom_setup.ps1

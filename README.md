@@ -57,6 +57,9 @@ This Project contains the following Blueprints.
 ### Configure Parallels VPN VM Settings
 
 
+### Install Parallels Tools
+
+
 ### KS Check macOS for ISO Building
 
 
@@ -82,9 +85,6 @@ This Project contains the following Blueprints.
 
 
 ### Remove CD ROM Drives and Restart
-
-
-### Install Parallels Tools
 
 
 
@@ -120,9 +120,9 @@ This Project contains the following Blueprints.
 
 | Name | Type | Comment |
 | ---- | ---- | ------- |
+| Parallels Tools | Large Archives | Get from "/Applications/Parallels Desktop.app/Contents/Resources/Tools/prl-tools-win.iso". |
 | Win10 Parallels Unattended Config | Version Controlled Files |  |
 | WIN Win10 Parallels Drivers | Version Controlled Files | From C:\Program Files (x86)\Parallels\Parallels Tools |
-| Parallels Tools | Large Archives | Get from "/Applications/Parallels Desktop.app/Contents/Resources/Tools/prl-tools-win.iso". |
 
 
 
