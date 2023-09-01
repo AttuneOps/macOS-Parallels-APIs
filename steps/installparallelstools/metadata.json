@@ -1,0 +1,44 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "97c59bdc-871f-4018-bb9d-1967b8b775c5", 
+    "isBlueprint": true, 
+    "key": "installparallelstools", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deployparallelstools"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "mountparallelstoolsiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "runptagentexe"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "unmountparallelstoolsiso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "removeisofromsoftware"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "kswpshutdownvm"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "kspstartvm"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "kswpwinrmhttpswait"
+        }
+    ], 
+    "name": "Install Parallels Tools", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

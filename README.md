@@ -84,6 +84,9 @@ This Project contains the following Blueprints.
 ### Remove CD ROM Drives and Restart
 
 
+### Install Parallels Tools
+
+
 
 
 
@@ -119,6 +122,7 @@ This Project contains the following Blueprints.
 | ---- | ---- | ------- |
 | Win10 Parallels Unattended Config | Version Controlled Files |  |
 | WIN Win10 Parallels Drivers | Version Controlled Files | From C:\Program Files (x86)\Parallels\Parallels Tools |
+| Parallels Tools | Large Archives | Get from "/Applications/Parallels Desktop.app/Contents/Resources/Tools/prl-tools-win.iso". |
 
 
 

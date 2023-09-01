@@ -1,0 +1,11 @@
+{
+    "externalUuid4": "9093c122-64e9-47e5-86ac-52b0ba375b3c", 
+    "fileName": "prl-tools-win.iso", 
+    "formatKey": "tar", 
+    "key": "parallelstools", 
+    "md5": "3396fafd6d28be60cd465a17bb072ad1", 
+    "name": "Parallels Tools", 
+    "remoteUri": null, 
+    "size": 12701696, 
+    "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
+}

@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "parallelstools", 
+    "deployPath": "/c$/software", 
+    "enabled": true, 
+    "externalUuid4": "6ff90b2b-7c23-447c-b753-8d01c0b017f6", 
+    "key": "deployparallelstools", 
+    "name": "Deploy Parallels Tools", 
+    "osCredKey": "windowsadministrator", 
+    "serverKey": "kickstartedwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

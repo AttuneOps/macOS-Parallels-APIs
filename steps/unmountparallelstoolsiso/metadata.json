@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "a42ecfc7-7e38-4ab1-bf47-cea68e2ae503", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "unmountparallelstoolsiso", 
+    "name": "Unmount Parallels Tools ISO", 
+    "osCredKey": "windowsadministrator", 
+    "serverKey": "kickstartedwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 60, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

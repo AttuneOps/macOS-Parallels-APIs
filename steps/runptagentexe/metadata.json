@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c9df9863-274f-4a97-9558-0c51dd6807b4", 
+    "interpreter": 1, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "runptagentexe", 
+    "name": "Run PTAgent.exe", 
+    "osCredKey": "windowsadministrator", 
+    "serverKey": "kickstartedwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 120, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

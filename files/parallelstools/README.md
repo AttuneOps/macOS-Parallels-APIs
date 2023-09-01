@@ -1,0 +1,1 @@
+Get from "/Applications/Parallels Desktop.app/Contents/Resources/Tools/prl-tools-win.iso".
