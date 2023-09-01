@@ -8,26 +8,26 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "kswpwinrmhttpswait"
-        }, 
-        {
-            "order": 50, 
-            "stepKey": "kswpshutdownvm"
+            "stepKey": "kswpwinrmhttpswaitplus120s"
         }, 
         {
             "order": 100, 
-            "stepKey": "kswpremovedriverscdrom"
+            "stepKey": "kswpshutdownvm"
         }, 
         {
             "order": 150, 
-            "stepKey": "kscleanbuildfilesstep"
+            "stepKey": "kswpremovedriverscdrom"
         }, 
         {
             "order": 200, 
-            "stepKey": "kspstartvm"
+            "stepKey": "kscleanbuildfilesstep"
         }, 
         {
             "order": 250, 
+            "stepKey": "kspstartvm"
+        }, 
+        {
+            "order": 300, 
             "stepKey": "kswpwinrmhttpswait"
         }
     ], 
