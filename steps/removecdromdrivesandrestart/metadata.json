@@ -19,10 +19,6 @@
             "stepKey": "kswpremovedriverscdrom"
         }, 
         {
-            "order": 200, 
-            "stepKey": "kscleanbuildfilesstep"
-        }, 
-        {
             "order": 250, 
             "stepKey": "kspstartvm"
         }, 

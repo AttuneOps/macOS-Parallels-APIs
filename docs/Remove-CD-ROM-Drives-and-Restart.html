@@ -237,16 +237,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#kscleanbuildfilesstep">
-                            <strong>Step 4 -</strong> KS Clean Build Files (Step)
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#kspstartvm">
-                            <strong>Step 5 -</strong> KSP Start VM
+                            <strong>Step 4 -</strong> KSP Start VM
                         </a>
                     </p>
 
@@ -254,7 +246,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#kswpwinrmhttpswait">
-                            <strong>Step 6 -</strong> KSWP WinRM HTTPS Wait
+                            <strong>Step 5 -</strong> KSWP WinRM HTTPS Wait
                         </a>
                     </p>
 
@@ -525,69 +517,9 @@ prlctl set &quot;${VM}&quot; --device-del cdrom1
 
 
                     <div class="row pt-5">
-                        <h3 id="kscleanbuildfilesstep">
-                            <a href="#kscleanbuildfilesstep">
-                                <strong>Step 4 -</strong> KS Clean Build Files (Step)
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-ksParallelsAttuneBaseDir=&quot;${HOME}/Parallels/os_auto_install&quot;
-
-DIR=&quot;${ksParallelsAttuneBaseDir}/build-{kickstartedNode.fqn}&quot;
-[[ ! -d ${DIR} ]] || rm -rfv ${DIR}
-
-ISO=&quot;${ksParallelsAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso&quot;
-[[ ! -f ${ISO} ]] || rm -fv ${ISO}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="kspstartvm">
                             <a href="#kspstartvm">
-                                <strong>Step 5 -</strong> KSP Start VM
+                                <strong>Step 4 -</strong> KSP Start VM
                             </a>
                         </h3>
                     </div>
@@ -644,7 +576,7 @@ prlctl start &quot;${VM}&quot;
                     <div class="row pt-5">
                         <h3 id="kswpwinrmhttpswait">
                             <a href="#kswpwinrmhttpswait">
-                                <strong>Step 6 -</strong> KSWP WinRM HTTPS Wait
+                                <strong>Step 5 -</strong> KSWP WinRM HTTPS Wait
                             </a>
                         </h3>
                     </div>

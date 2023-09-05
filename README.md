@@ -60,22 +60,7 @@ This Project contains the following Blueprints.
 ### KS Check macOS for ISO Building
 
 
-### KS Clean Build Files
-
-
-### KS Create Drivers and Answer File ISO
-
-
-### KS Create Win2016 Answer File ISO
-
-
 ### KS Deploy Parallels Drivers
-
-
-### KS Deploy Win10 Unattended Config
-
-
-### KS Deploy Win2019 Unattended Config
 
 
 ### KS Rename ISO

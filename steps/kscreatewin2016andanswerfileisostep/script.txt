@@ -1,8 +1,0 @@
-export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
-echo "Using $(which xorriso)"
-
-cd {ksParallelsAttuneBaseDir}/build-{kickstartedNode.fqn}
-
-xorriso -as mkisofs -o Drivers.iso \
-    -iso-level 2  -joliet-long -relaxed-filenames \
-    -J -l -D -N -V "DRIVERS" Autounattend.xml custom_setup.ps1
