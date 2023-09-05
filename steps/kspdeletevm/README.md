@@ -1,0 +1,1 @@
+Deletes the Virtual Machine.
