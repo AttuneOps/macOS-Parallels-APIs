@@ -57,9 +57,6 @@ This Project contains the following Blueprints.
 ### Configure Parallels VPN VM Settings
 
 
-### Install Parallels Tools
-
-
 ### KS Check macOS for ISO Building
 
 
@@ -81,17 +78,26 @@ This Project contains the following Blueprints.
 ### KS Deploy Win2019 Unattended Config
 
 
-### KS Parallels Recreate Virtual Machine
-
-
 ### KS Rename ISO
 
 
 ### KS Setup macOS for ISO Building
 
 
+### KS Parallels Recreate Virtual Machine
+
+Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO.
+
 ### Remove CD ROM Drives and Restart
 
+Removes both CD ROMs.
+
+### Install Parallels Tools
+
+Install Parallels Tools. Use this after Windows installation has completed.
 
 
 

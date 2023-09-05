@@ -1,0 +1,1 @@
+Checks if the `genisoimage` is aliased with `xorriso`.

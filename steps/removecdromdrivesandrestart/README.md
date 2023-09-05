@@ -1,0 +1,1 @@
+Removes both CD ROMs.

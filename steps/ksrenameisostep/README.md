@@ -1,0 +1,1 @@
+Renames the ISO at directory `${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn` to `kickstart.iso`.

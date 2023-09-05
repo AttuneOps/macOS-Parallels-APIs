@@ -1,0 +1,1 @@
+Install Parallels Tools. Use this after Windows installation has completed.
