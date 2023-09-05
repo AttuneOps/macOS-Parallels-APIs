@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "a3d89617-68b4-4fbe-80fa-40b3ab9ab429", 
+    "interpreter": 1, 
+    "key": "kscreatewin2016driversandanswerfileisostep", 
+    "name": "KS Create Win2016 Drivers and Answer File ISO (Step)", 
+    "osCredKey": "parallelshostuser", 
+    "serverKey": "parallelshost", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

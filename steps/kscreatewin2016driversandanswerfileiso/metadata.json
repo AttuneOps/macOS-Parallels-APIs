@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "db388af0-ebdf-4159-9a2c-eba2f6f3c96c", 
+    "isBlueprint": true, 
+    "key": "kscreatewin2016driversandanswerfileiso", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "kscreatewin2016driversandanswerfileisostep"
+        }
+    ], 
+    "name": "KS Create Win2016 Drivers and Answer File ISO", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

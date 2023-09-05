@@ -1,0 +1,112 @@
+;
+;
+; Installation file (.inf) for the Parallels paravirt disk filter.
+; Version 19.0.0.54570
+;
+; Copyright 2023 Parallels International GmbH
+;
+
+[Version]
+Signature = "$Windows NT$"
+Class     = DiskDrive
+ClassGUID = {4d36e967-e325-11ce-bfc1-08002be10318}
+Provider  = %Parallels%
+DriverVer = 08/14/2023, 19.0.0.54570
+DriverPackageType=ClassFilter
+CatalogFile = prl_strg.cat
+CatalogFile.ntx86   = prl_strg_x86.cat
+CatalogFile.ntamd64 = prl_strg_x64.cat
+CatalogFile.ntarm64 = prl_strg_arm64.cat
+
+[SourceDisksNames]
+1 = %diskid1%
+
+[SourceDisksFiles]
+prl_strg.sys=1,\i386
+
+[SourceDisksFiles.amd64]
+prl_strg.sys=1,\amd64
+
+[SourceDisksFiles.arm64]
+prl_strg.sys=1,\arm64
+
+;
+; General installation section
+;
+
+[DefaultInstall.NTx86]
+CopyFiles = DriverCopyFiles
+;DelReg    = prl_strg.DelReg
+
+[DefaultInstall.NTamd64]
+CopyFiles = DriverCopyFiles
+
+[DefaultInstall.NTarm64]
+CopyFiles = DriverCopyFiles
+
+[DefaultUninstall.NTx86]
+LegacyUninstall=1
+DelFiles = DriverCopyFiles
+DelReg   = prl_strg.DelReg
+
+[DefaultUninstall.NTamd64]
+DelFiles = DriverCopyFiles
+DelReg   = prl_strg.DelReg
+
+[DefaultUninstall.NTarm64]
+DelFiles = DriverCopyFiles
+DelReg   = prl_strg.DelReg
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[DriverCopyFiles]
+prl_strg.sys,,,0x4000
+
+[prl_strg.DelReg]
+HKLM, System\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318}, LowerFilters, 0x00018002, prl_storage
+HKLM, System\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318}, LowerFilters, 0x00018002, prl_strg
+
+;
+; Service installation section
+;
+
+[DefaultInstall.NTx86.Services]
+;DelService = prl_storage
+AddService = prl_strg, ,prl_strg.Service.Install
+
+[DefaultInstall.NTamd64.Services]
+AddService = prl_strg, ,prl_strg.Service.Install
+
+[DefaultInstall.NTarm64.Services]
+AddService = prl_strg, ,prl_strg.Service.Install
+
+[prl_strg.Service.Install]
+DisplayName    = %service_desc%
+ServiceType    = 1
+StartType      = 0
+ErrorControl   = 1
+ServiceBinary  = %12%\prl_strg.sys
+AddReg         = prl_strg.Service.AddReg
+
+[prl_strg.Service.AddReg]
+HKLM, System\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318}, LowerFilters, 0x00010008, prl_strg
+
+[DefaultUninstall.NTx86.Services]
+DelService = prl_strg,0x204
+
+[DefaultUninstall.NTamd64.Services]
+DelService = prl_strg,0x204
+
+[DefaultUninstall.NTarm64.Services]
+DelService = prl_strg,0x204
+
+;
+; Localizable Strings
+;
+
+[Strings]
+
+Parallels    = "Parallels"
+service_desc = "Parallels paravirt disk filter"
+diskid1      = "Parallels Tools Installation Disk"

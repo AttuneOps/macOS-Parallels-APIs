@@ -1,0 +1,212 @@
+;
+;
+; Installation file (.inf) for the Parallels Display Adapter device.
+; Version 19.0.0.54570
+;
+; Copyright 2023 Parallels International GmbH
+;
+[Version]
+Signature = "$Windows NT$"
+Class = Display
+ClassGUID = {4D36E968-E325-11CE-BFC1-08002BE10318}
+Provider = %Parallels%
+DriverVer = 08/14/2023, 19.0.0.54570
+CatalogFile = prl_dd_x86.cat
+CatalogFile.ntamd64 = prl_dd_x64.cat
+CatalogFile.ntarm64 = prl_dd_arm64.cat
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+prl_kmdd.sys = 1,\i386
+prl_umdd.dl3 = 1,\i386
+prl_gldd.dl3 = 1,\i386
+prl_umdd10.dl3 = 1,\i386
+prl_umdd12.dl3 = 1,\i386
+
+[SourceDisksFiles.amd64]
+prl_kmdd.sys = 1,\amd64
+prl_umdd.dl6 = 1,\amd64
+prl_umdd.dl3 = 1,\i386
+prl_gldd.dl6 = 1,\amd64
+prl_gldd.dl3 = 1,\i386
+prl_umdd10.dl6 = 1,\amd64
+prl_umdd10.dl3 = 1,\i386
+prl_umdd12.dl6 = 1,\amd64
+prl_umdd12.dl3 = 1,\i386
+
+[SourceDisksFiles.arm64]
+prl_kmdd.sys = 1,\arm64
+prl_umdd.da6 = 1,\arm64
+prl_umdd.dl3 = 1,\i386
+prl_umdd.dlc = 1,\chpe
+prl_gldd.da6 = 1,\arm64
+prl_gldd.dl3 = 1,\i386
+prl_gldd.dlc = 1,\chpe
+prl_umdd10.da6 = 1,\arm64
+prl_umdd10.dl3 = 1,\i386
+prl_umdd10.dlc = 1,\chpe
+prl_umdd12.da6 = 1,\arm64
+prl_umdd12.dl3 = 1,\i386
+prl_umdd12.dlc = 1,\chpe
+
+
+[Manufacturer]
+%Parallels% = Models, NTx86.6, NTamd64.6, NTarm64.6
+
+[Models.NTx86.6]
+%prl_dd% = DDInstall_6, PCI\VEN_1AB8&DEV_4005&SUBSYS_04001AB8
+
+[Models.NTamd64.6]
+%prl_dd% = DDInstall64_6, PCI\VEN_1AB8&DEV_4005&SUBSYS_04001AB8
+
+[Models.NTarm64.6]
+%prl_dd% = DDInstall64_6, ACPI\VEN_PRL&DEV_4005
+
+
+[DDInstall_6.NTx86]
+FeatureScore = E0
+CopyFiles = MiniportCopyFiles, Display3CopyFiles, GL3CopyFiles
+AddReg = DDAddReg
+
+[DDInstall_6.NTx86.HW]
+AddReg = DDAddMSIReg
+
+[DDInstall_6.NTx86.Services]
+AddService = prl_dd,2,DDService
+
+[DDInstall_6.GeneralConfigData]
+;MaximumDeviceMemoryConfiguration = 256
+
+
+[DDInstall64_6.NTamd64]
+FeatureScore = E0
+CopyFiles = MiniportCopyFiles, Display6CopyFiles, GL6CopyFiles, Wow64CopyFiles
+AddReg = DDAddReg
+AddReg = DDAddWowReg
+
+[DDInstall64_6.NTamd64.HW]
+AddReg = DDAddMSIReg
+
+[DDInstall64_6.NTamd64.Services]
+AddService = prl_dd,2,DDService
+
+[DDInstall64_6.GeneralConfigData]
+;MaximumDeviceMemoryConfiguration = 256
+
+
+[DDInstall64_6.NTarm64]
+FeatureScore = E0
+CopyFiles = MiniportCopyFiles, Display6ArmCopyFiles, GL6ArmCopyFiles, Wow64CopyFiles, ChpeCopyFiles
+AddReg = DDAddReg
+AddReg = DDAddWowReg
+DelReg = DDDelWow2Reg
+DelReg = DDDelWowX64Reg
+
+[DDInstall64_6.NTarm64.Services]
+AddService = prl_dd,2,DDService
+
+
+[DestinationDirs]
+MiniportCopyFiles = 12
+Display3CopyFiles = 11
+Display6CopyFiles = 11
+GL3CopyFiles = 11
+GL6CopyFiles = 11
+Wow64CopyFiles = 10,SysWow64
+Display6ArmCopyFiles = 11
+GL6ArmCopyFiles = 11
+ChpeCopyFiles = 10,SyChpe32
+
+[MiniportCopyFiles]
+prl_kmdd.sys
+
+[Display3CopyFiles]
+prl_umdd.dll,prl_umdd.dl3,,0x4000
+prl_umdd10.dll,prl_umdd10.dl3,,0x4000
+prl_umdd12.dll,prl_umdd12.dl3,,0x4000
+
+[Display6CopyFiles]
+prl_umdd.dll,prl_umdd.dl6,,0x4000
+prl_umdd10.dll,prl_umdd10.dl6,,0x4000
+prl_umdd12.dll,prl_umdd12.dl6,,0x4000
+
+[GL3CopyFiles]
+prl_gldd.dll,prl_gldd.dl3,,0x4000
+
+[GL6CopyFiles]
+prl_gldd.dll,prl_gldd.dl6,,0x4000
+
+[Wow64CopyFiles]
+prl_umdd.dll,prl_umdd.dl3,,0x4000
+prl_gldd.dll,prl_gldd.dl3,,0x4000
+prl_umdd10.dll,prl_umdd10.dl3,,0x4000
+prl_umdd12.dll,prl_umdd12.dl3,,0x4000
+
+
+[Display6ArmCopyFiles]
+prl_umdd.dll,prl_umdd.da6,,0x4000
+prl_umdd10.dll,prl_umdd10.da6,,0x4000
+prl_umdd12.dll,prl_umdd12.da6,,0x4000
+
+[GL6ArmCopyFiles]
+prl_gldd.dll,prl_gldd.da6,,0x4000
+
+[ChpeCopyFiles]
+prl_umdd.dll,prl_umdd.dlc,,0x4000
+prl_gldd.dll,prl_gldd.dlc,,0x4000
+prl_umdd10.dll,prl_umdd10.dlc,,0x4000
+prl_umdd12.dll,prl_umdd12.dlc,,0x4000
+
+
+[DDService]
+DisplayName = %prl_dd%
+ServiceType = 1
+StartType = 3
+ErrorControl = 0
+LoadOrderGroup = Video
+ServiceBinary = %12%\prl_kmdd.sys
+
+[DDAddReg]
+HKR,, "InstalledDisplayDrivers", %REG_MULTI_SZ%, "prl_umdd", "prl_umdd10", "prl_umdd10", "prl_umdd12"
+HKR,, "UserModeDriverName", %REG_MULTI_SZ%, "prl_umdd.dll", "prl_umdd10.dll", "prl_umdd10.dll", "prl_umdd12.dll"
+HKR,, "VideoDebugLevel", %REG_DWORD%, 3
+HKR,, "RemovableSources", %REG_DWORD%, 0xfffe
+HKR,, "OpenGLDriverName", %REG_MULTI_SZ%, "prl_gldd.dll"
+HKR,, "OpenGLVersion", %REG_DWORD%, 1
+HKR,, "OpenGLFlags", %REG_DWORD%, 3
+
+[DDAddWowReg]
+HKR,, "UserModeDriverNameWow", %REG_MULTI_SZ%, "prl_umdd.dll", "prl_umdd10.dll", "prl_umdd10.dll", "prl_umdd12.dll"
+HKR,, "OpenGLDriverNameWow", %REG_MULTI_SZ%, "prl_gldd.dll"
+HKR,, "OpenGLVersionWow", %REG_DWORD%, 1
+HKR,, "OpenGLFlagsWow", %REG_DWORD%, 3
+
+[DDDelWow2Reg]
+HKR,, "UserModeDriverNameWow2"
+HKR,, "OpenGLDriverNameWow2"
+HKR,, "OpenGLVersionWow2"
+HKR,, "OpenGLFlagsWow2"
+
+[DDDelWowX64Reg]
+HKR,, "UserModeDriverNameX64"
+HKR,, "OpenGLDriverNameX64"
+HKR,, "OpenGLVersionX64"
+HKR,, "OpenGLFlagsX64"
+
+[DDAddMSIReg]
+HKR, "Interrupt Management",, %REG_KEY%
+HKR, "Interrupt Management\MessageSignaledInterruptProperties",, %REG_KEY%
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", "MSISupported", %REG_DWORD%, 1
+
+
+[Strings]
+REG_KEY      = 0x00000010
+REG_SZ       = 0x00000000
+REG_MULTI_SZ = 0x00010000
+REG_DWORD    = 0x00010001
+
+Parallels = "Parallels"
+Disk1 = "Parallels Tools Installation Disk"
+prl_dd = "Parallels Display Adapter (WDDM)"

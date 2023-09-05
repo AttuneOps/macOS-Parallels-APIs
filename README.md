@@ -90,6 +90,9 @@ This Project contains the following Blueprints.
 ### Remove CD ROM Drives and Restart
 
 
+### KS Create Win2016 Drivers and Answer File ISO
+
+
 
 
 
@@ -127,6 +130,7 @@ This Project contains the following Blueprints.
 | Win10 Parallels Unattended Config | Version Controlled Files |  |
 | Win2019 Parallels Unattended Config | Version Controlled Files |  |
 | WIN Win10 Parallels Drivers | Version Controlled Files | From C:\Program Files (x86)\Parallels\Parallels Tools |
+| WIN 2016 Parallels Drivers 14-Aug-2023 | Version Controlled Files | This is from "C:\Program Files\Parallels\Parallels Tools\Drivers" after installing Parallels Tools on Win2016. |
 
 
 

@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": "stop", 
-    "archiveKey": "winwin10parallelsdrivers", 
+    "archiveKey": "win2016parallelsdrivers14aug2023", 
     "deployPath": "${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}/Drivers", 
     "enabled": true, 
     "externalUuid4": "7de50a2b-cf4e-4944-be5c-fb61c0011b41", 

@@ -1,0 +1,56 @@
+;
+;
+; Installation file (.inf) for the Parallels Shared printer.
+; Version 19.0.0.54570
+;
+; Copyright 2023 Parallels International GmbH
+;
+[Version]
+Signature = "$Windows NT$"
+Provider = "Parallels"
+ClassGUID = {4D36E979-E325-11CE-BFC1-08002BE10318}
+Class = Printer
+DriverVer = 08/14/2023, 19.0.0.54570
+CatalogFile.ntx86 = prl_shprint_x86.cat
+CatalogFile.ntamd64 = prl_shprint_x64.cat
+CatalogFile.ntarm64 = prl_shprint_arm64.cat
+
+[Manufacturer]
+"Parallels" = Parallels,NTx86,NTamd64,NTarm64
+
+[Parallels.NTx86]
+"Parallels Shared Printer" = prlprint.ppd,ParallelsParallels_S5D2D
+
+[Parallels.NTamd64]
+"Parallels Shared Printer" = prlprint.ppd,ParallelsParallels_S5D2D
+
+[Parallels.NTarm64]
+"Parallels Shared Printer" = prlprint.ppd,ParallelsParallels_S5D2D
+
+[prlprint.ppd]
+Include = NTPRINT.INF
+CopyFiles = @prlprint.ppd
+DataSection = PSCRIPT_DATA
+DataFile = prlprint.ppd
+Needs = PSCRIPT.OEM
+
+[prlprint.ppd.Services]
+AddService = ,2
+
+[DestinationDirs]
+DefaultDestDir = 66000
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+prlprint.ppd = 1
+
+[SourceDisksFiles.amd64]
+prlprint.ppd = 1
+
+[SourceDisksFiles.arm64]
+prlprint.ppd = 1
+
+[Strings]
+Disk1 = "Parallels Tools Installation Disk"
