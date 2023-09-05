@@ -1,0 +1,91 @@
+;
+;
+; Installation file (.inf) for the Parallels Location device.
+; Version 19.0.0.54570
+;
+; Copyright 2023 Parallels International GmbH
+;
+
+[Version]
+Signature="$Windows NT$"
+Class=Sensor
+ClassGuid={5175D334-C371-4806-B3BA-71FD53C9258D}
+Provider=%Parallels%
+DriverVer=08/14/2023, 19.0.0.54570
+CatalogFile=prl_location_x86.cat
+CatalogFile.ntamd64=prl_location_x64.cat
+CatalogFile.ntarm64=prl_location_arm64.cat
+
+[SourceDisksNames]
+1 = %MediaDescription%
+
+[SourceDisksFiles]
+prl_location.dll=1,i386
+
+[SourceDisksFiles.amd64]
+prl_location.dll=1,amd64
+
+[SourceDisksFiles.arm64]
+prl_location.dll=1,arm64
+
+[Manufacturer]
+%Parallels%=Parallels,NTx86,NTAMD64,NTARM64
+
+[Parallels.NTx86]
+%ClassName%=LocationDriver,ParallelsTools\LocationDriver
+
+[Parallels.NTAMD64]
+%ClassName%=LocationDriver,ParallelsTools\LocationDriver
+
+[Parallels.NTARM64]
+%ClassName%=LocationDriver,ParallelsTools\LocationDriver
+
+[LocationDriver.NT]
+CopyFiles=UMDriverCopy
+AddProperty=DriverPropertiesSection
+
+[LocationDriver.NT.hw]
+
+[LocationDriver.NT.Services]
+AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
+
+[LocationDriver.NT.CoInstallers]
+AddReg=CoInstallers_AddReg
+
+[LocationDriver.NT.Wdf]
+UmdfService=UMDFDriver,UMDFDriver_Install
+UmdfServiceOrder=UMDFDriver
+UmdfImpersonationLevel=Impersonation
+
+[UMDFDriver_Install]
+UmdfLibraryVersion=1.9.0
+ServiceBinary=%12%\UMDF\prl_location.dll
+DriverCLSID={650aaaab-c301-4eb7-9f88-6d09eadd6314}
+
+[WUDFRD_ServiceInstall]
+DisplayName = %WudfRdDisplayName%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary = %12%\WUDFRd.sys
+LoadOrderGroup = Base
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WUDFCoinstaller.dll"
+
+[DestinationDirs]
+UMDriverCopy=12,UMDF
+
+[UMDriverCopy]
+prl_location.dll,,,0x00004000
+
+; =================== Driver Property section ===================
+[DriverPropertiesSection]
+DeviceIcon,,,,"%%SystemRoot%%\system32\sensorscpl.dll,-1009"
+
+; =================== Generic ==================================
+[Strings]
+Parallels="Parallels"
+MediaDescription="Parallels Tools Installation Disk"
+ClassName="Parallels Location Provider"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
