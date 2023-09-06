@@ -1,1 +1,0 @@
-From C:\Program Files (x86)\Parallels\Parallels Tools
