@@ -1,0 +1,1 @@
+Remove Windows and drivers CDROMs.

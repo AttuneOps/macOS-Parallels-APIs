@@ -229,8 +229,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#kswpremovedriverscdrom">
-                            <strong>Step 3 -</strong> KSWP Remove Drivers CDROM
+                        <a href="#kswpremovewindowsanddriverscdroms">
+                            <strong>Step 3 -</strong> KSWP Remove Windows and Drivers CDROMs
                         </a>
                     </p>
 
@@ -396,7 +396,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Shut down virtual machine.</p>
                             </p>
                         </div>
                     </div>
@@ -454,9 +454,9 @@ prlctl stop &quot;${VM}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="kswpremovedriverscdrom">
-                            <a href="#kswpremovedriverscdrom">
-                                <strong>Step 3 -</strong> KSWP Remove Drivers CDROM
+                        <h3 id="kswpremovewindowsanddriverscdroms">
+                            <a href="#kswpremovewindowsanddriverscdroms">
+                                <strong>Step 3 -</strong> KSWP Remove Windows and Drivers CDROMs
                             </a>
                         </h3>
                     </div>
@@ -464,7 +464,7 @@ prlctl stop &quot;${VM}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Remove Windows and drivers CDROMs.</p>
                             </p>
                         </div>
                     </div>
@@ -497,7 +497,7 @@ VM=&#x27;{kickstartedNode.hostname}&#x27;
 set -x
 
 
-# Remove Drivers CDROM
+# Remove Windows CDROM
 prlctl set &quot;${VM}&quot; --device-del cdrom0
 #prlctl set &quot;${VM}&quot; --device-set cdrom0 --disconnect
 

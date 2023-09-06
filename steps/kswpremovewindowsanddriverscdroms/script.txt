@@ -2,7 +2,7 @@ VM='{kickstartedNode.hostname}'
 set -x
 
 
-# Remove Drivers CDROM
+# Remove Windows CDROM
 prlctl set "${VM}" --device-del cdrom0
 #prlctl set "${VM}" --device-set cdrom0 --disconnect
 

@@ -16,7 +16,7 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "kswpremovedriverscdrom"
+            "stepKey": "kswpremovewindowsanddriverscdroms"
         }, 
         {
             "order": 250, 
