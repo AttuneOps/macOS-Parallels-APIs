@@ -1,0 +1,1 @@
+Deletes the Parallels Tools ISO from `C:\software`.

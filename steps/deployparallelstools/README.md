@@ -1,0 +1,1 @@
+Deploys Windows Parallels Tools ISO to `/c$/software`.

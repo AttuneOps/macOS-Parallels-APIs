@@ -1,0 +1,1 @@
+Mounts Windows Parallels Tools ISO to `D:` drive.
