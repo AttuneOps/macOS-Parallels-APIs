@@ -1,0 +1,1 @@
+Disables shared printer support.

@@ -1,0 +1,1 @@
+Setting VM clipboard settings to "Shared".

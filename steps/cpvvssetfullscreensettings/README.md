@@ -1,0 +1,1 @@
+Setting VM to use all displays in fullscreen.

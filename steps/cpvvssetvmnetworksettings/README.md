@@ -1,0 +1,1 @@
+Setting VM network to "Shared Network (Reccommended)".
