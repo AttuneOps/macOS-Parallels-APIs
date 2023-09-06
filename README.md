@@ -63,9 +63,6 @@ This Project contains the following Blueprints.
 ### KS Deploy Parallels Drivers
 
 
-### KS Rename ISO
-
-
 ### KS Setup macOS for ISO Building
 
 
