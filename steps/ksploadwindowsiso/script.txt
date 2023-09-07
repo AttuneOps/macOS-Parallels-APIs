@@ -1,11 +1,11 @@
 VM='{kickstartedNode.hostname}'
 
-DIR="${HOME}/Parallels/os_auto_install/build-{kickstartedNode.fqn}"
+DIR="${HOME}/Parallels/os_auto_install/"
 
 # Set up the Virtual Machine by mounting the .iso to a cd drive
 prlctl set "${VM}" \
     --device-set cdrom0 \
-    --image ${DIR}/kickstart.iso \
+    --image ${DIR}/kickstart_{targetServer.fqn}.iso \
     --enable \
     --connect
     
