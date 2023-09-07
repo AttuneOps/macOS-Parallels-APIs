@@ -81,6 +81,9 @@ Removes both CD ROMs.
 
 Install Parallels Tools. Use this after Windows installation has completed.
 
+### Parallels Recreate Windows Virtual Machine and Install Tools
+
+
 
 
 

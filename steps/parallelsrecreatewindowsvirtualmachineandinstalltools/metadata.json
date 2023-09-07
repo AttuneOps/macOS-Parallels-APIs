@@ -1,0 +1,24 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "b93d362e-a4d1-477a-af84-176c0735eea2", 
+    "isBlueprint": true, 
+    "key": "parallelsrecreatewindowsvirtualmachineandinstalltools", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "ksparallelsrecreatevirtualmachine"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "removecdromdrivesandrestart"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "installparallelstools"
+        }
+    ], 
+    "name": "Parallels Recreate Windows Virtual Machine and Install Tools", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
