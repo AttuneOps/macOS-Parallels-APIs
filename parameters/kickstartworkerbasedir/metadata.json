@@ -1,7 +1,7 @@
 {
     "externalUuid4": "80a11727-4207-41b8-b181-6e1f0cd15b41", 
-    "key": "ksparallelsattunebasedir", 
-    "name": "KS Parallels: Attune Base Dir", 
+    "key": "kickstartworkerbasedir", 
+    "name": "Kickstart Worker Base Dir", 
     "showInPlan": true, 
     "type": "c.s.s.b.phv.Text"
 }

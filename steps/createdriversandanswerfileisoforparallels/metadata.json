@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "a71b2c4f-7c72-49a9-83cb-7b534438eb2e", 
+    "interpreter": 1, 
+    "key": "createdriversandanswerfileisoforparallels", 
+    "name": "Create Drivers and Answer File ISO for Parallels", 
+    "osCredKey": "kickstartworkerlinuxuser", 
+    "serverKey": "kickstartworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

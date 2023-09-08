@@ -2,27 +2,27 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "4a3fbfee-4713-4506-9560-a44572713e62", 
+    "externalUuid4": "f62a980f-b4d4-4ad8-89fc-23f9fb09a906", 
     "isBlueprint": true, 
-    "key": "recreatevirtualmachineonmacosparallels", 
+    "key": "recreatebiosvirtualmachineonmacosparallels", 
     "links": [
         {
             "order": 0, 
             "stepKey": "deletevm"
         }, 
         {
-            "order": 20, 
-            "stepKey": "createvm"
+            "order": 50, 
+            "stepKey": "createbiosvm"
         }, 
         {
-            "order": 40, 
+            "order": 200, 
             "stepKey": "loadiso"
         }, 
         {
-            "order": 100, 
+            "order": 300, 
             "stepKey": "startvm"
         }
     ], 
-    "name": "Recreate Virtual Machine on macOS Parallels", 
+    "name": "Recreate BIOS Virtual Machine on macOS Parallels", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

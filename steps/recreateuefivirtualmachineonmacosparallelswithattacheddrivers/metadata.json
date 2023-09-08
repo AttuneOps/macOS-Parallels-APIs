@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "e917949f-f3a2-41ae-be47-443afdb183db", 
+    "isBlueprint": true, 
+    "key": "recreateuefivirtualmachineonmacosparallelswithattacheddrivers", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deletevm"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "createuefivm"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "loadiso"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "loaddriversiso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "startvm"
+        }
+    ], 
+    "name": "Recreate UEFI Virtual Machine on macOS Parallels with Attached Drivers", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "ede1afc1-4ef2-4bfe-b943-48e7eaaa00ea", 
+    "isBlueprint": true, 
+    "key": "createdriversandanswerfileisoforparallelsgroup", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "createdriversandanswerfileisoforparallels"
+        }
+    ], 
+    "name": "Create Drivers and Answer File ISO for Parallels Group", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

@@ -6,29 +6,38 @@
 
 
 <head>
-    <title>How to Remove CD ROM Drives and Restart - Attune Automation</title>
+    <title>How to Recreate UEFI Virtual Machine on macOS Parallels - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Remove CD ROM Drives and Restart - Attune Automation">
+          content="How to Recreate UEFI Virtual Machine on macOS Parallels - Attune Automation">
     <meta name="description"
-          content="Removes both CD ROMs.">
+          content="Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO.">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Remove CD ROM Drives and Restart - Attune Automation" />
-    <meta property="og:description" content="Removes both CD ROMs." />
+          content="HowTo Recreate UEFI Virtual Machine on macOS Parallels - Attune Automation" />
+    <meta property="og:description" content="Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO." />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Remove CD ROM Drives and Restart - Attune Automation" />
-    <meta name="twitter:description" content="Removes both CD ROMs." />
+          content="How to Recreate UEFI Virtual Machine on macOS Parallels - Attune Automation" />
+    <meta name="twitter:description" content="Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO." />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -119,7 +128,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Remove CD ROM Drives and Restart</strong>
+                    <strong>Recreate UEFI Virtual Machine on macOS Parallels</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +142,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Remove CD ROM Drives and Restart
+                How to Recreate UEFI Virtual Machine on macOS Parallels
             </h1>
         </div>
     </div>
@@ -142,7 +151,11 @@
     <div class="row">
         <div class="description col px-0">
             <p class="text-left">
-                <p>Removes both CD ROMs.</p>
+                <p>Recreates a Parallels Desktop virtual machine using:</p>
+<ol>
+<li>1 x unaltered Windows ISO.</li>
+<li>1 x drivers ISO.</li>
+</ol>
             </p>
         </div>
     </div>
@@ -204,7 +217,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Remove CD ROM Drives and Restart</strong>
+                            <strong>Recreate UEFI Virtual Machine on macOS Parallels</strong>
                         </a>
                     </p>
 
@@ -213,24 +226,24 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#kswpwinrmhttpswait">
-                            <strong>Step 1 -</strong> KSWP WinRM HTTPS Wait
+                        <a href="#deletevm">
+                            <strong>Step 1 -</strong> Delete VM
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#kswpshutdownvm">
-                            <strong>Step 2 -</strong> KSWP Shutdown VM
+                        <a href="#createuefivm">
+                            <strong>Step 2 -</strong> Create UEFI VM
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#kswpremovewindowsanddriverscdroms">
-                            <strong>Step 3 -</strong> KSWP Remove Windows and Drivers CDROMs
+                        <a href="#loadiso">
+                            <strong>Step 3 -</strong> Load ISO
                         </a>
                     </p>
 
@@ -239,14 +252,6 @@
                     <p class="text-muted pt-2">
                         <a href="#startvm">
                             <strong>Step 4 -</strong> Start VM
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#kswpwinrmhttpswait">
-                            <strong>Step 5 -</strong> KSWP WinRM HTTPS Wait
                         </a>
                     </p>
 
@@ -309,7 +314,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Remove CD ROM Drives and Restart</strong>
+                You've automated: <strong>Recreate UEFI Virtual Machine on macOS Parallels</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -340,9 +345,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="kswpwinrmhttpswait">
-                            <a href="#kswpwinrmhttpswait">
-                                <strong>Step 1 -</strong> KSWP WinRM HTTPS Wait
+                        <h3 id="deletevm">
+                            <a href="#deletevm">
+                                <strong>Step 1 -</strong> Delete VM
                             </a>
                         </h3>
                     </div>
@@ -350,53 +355,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    <div class="row">
-        <p class="mb-0">
-            Check if TCP Port <strong>0</strong> is listening.
-            When the TCP Port is up, wait <strong>10</strong>
-            seconds.
-        </p>
-        <p>Use Telnet to check if the TCP Service is accepting connections.</p>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="kswpshutdownvm">
-                            <a href="#kswpshutdownvm">
-                                <strong>Step 2 -</strong> KSWP Shutdown VM
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Shut down virtual machine.</p>
+                                <p>Deletes the Virtual Machine.</p>
                             </p>
                         </div>
                     </div>
@@ -438,8 +397,21 @@ ssh {macoshostuser}@{macoshost}
                 <code class="language-sql py-0">
 VM=&#x27;{kickstartedNode.hostname}&#x27;
 
-echo &quot;Shutting down ${VM}&quot;
-prlctl stop &quot;${VM}&quot;
+if prlctl list &quot;${VM}&quot;
+then
+    echo &quot;VM Found&quot;
+    
+    echo  &quot;Deleting VM : ${VM}&quot;
+    if prlctl delete &quot;${VM}&quot;
+    then  
+        echo &quot;Success&quot;
+    else 
+        prlctl stop &quot;${VM}&quot; --kill
+        prlctl delete &quot;${VM}&quot;
+    fi
+else
+    echo &quot;No VM, continuing.&quot;
+fi
                 </code>
             </pre>
         </div>
@@ -454,9 +426,9 @@ prlctl stop &quot;${VM}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="kswpremovewindowsanddriverscdroms">
-                            <a href="#kswpremovewindowsanddriverscdroms">
-                                <strong>Step 3 -</strong> KSWP Remove Windows and Drivers CDROMs
+                        <h3 id="createuefivm">
+                            <a href="#createuefivm">
+                                <strong>Step 2 -</strong> Create UEFI VM
                             </a>
                         </h3>
                     </div>
@@ -464,7 +436,7 @@ prlctl stop &quot;${VM}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Remove Windows and drivers CDROMs.</p>
+                                <p>Creates the virtual machine.</p>
                             </p>
                         </div>
                     </div>
@@ -496,13 +468,85 @@ prlctl stop &quot;${VM}&quot;
 VM=&#x27;{kickstartedNode.hostname}&#x27;
 set -x
 
+# Create the VM
+prlctl create &quot;${VM}&quot; --ostype {kickstartedParallelsOsType}
 
-# Remove Windows CDROM
-prlctl set &quot;${VM}&quot; --device-del cdrom0
-#prlctl set &quot;${VM}&quot; --device-set cdrom0 --disconnect
+# Set the VM Paramaters
+prlctl set &quot;${VM}&quot; --memsize $(({kickstartedVmRamSizeGb}*1024))
 
-# Remove Drivers CDROM
-prlctl set &quot;${VM}&quot; --device-del cdrom1
+# Set the VM CPU Count
+prlctl set &quot;${VM}&quot; --cpus {kickstartedVmCpuCount}
+
+# All Synerty kickstarts are 50gb as a standard
+prlctl set &quot;${VM}&quot; --size 51200
+
+# Disable EFI boot
+#prlctl set &quot;${VM}&quot; --efi-boot=off
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="loadiso">
+                            <a href="#loadiso">
+                                <strong>Step 3 -</strong> Load ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Loads the Windows ISO to the first CD ROM.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+VM=&#x27;{kickstartedNode.hostname}&#x27;
+
+DIR=&quot;${HOME}/Parallels/os_auto_install/&quot;
+
+# Set up the Virtual Machine by mounting the .iso to a cd drive
+prlctl set &quot;${VM}&quot; \
+    --device-set cdrom0 \
+    --image ${DIR}/kickstart_{kickstartedNode.fqn}.iso \
+    --enable \
+    --connect
+    
+# this should be a D: drive
                 </code>
             </pre>
         </div>
@@ -563,52 +607,6 @@ prlctl start &quot;${VM}&quot;
                 </code>
             </pre>
         </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="kswpwinrmhttpswait">
-                            <a href="#kswpwinrmhttpswait">
-                                <strong>Step 5 -</strong> KSWP WinRM HTTPS Wait
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    <div class="row">
-        <p class="mb-0">
-            Check if TCP Port <strong>0</strong> is listening.
-            When the TCP Port is up, wait <strong>10</strong>
-            seconds.
-        </p>
-        <p>Use Telnet to check if the TCP Service is accepting connections.</p>
     </div>
 
 

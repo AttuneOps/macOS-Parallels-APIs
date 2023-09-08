@@ -73,16 +73,29 @@ Install Parallels Tools. Use this after Windows installation has completed.
 ### Parallels Recreate Windows Virtual Machine and Install Tools
 
 
-### Remove CD ROM Drives and Restart
-
-Removes both CD ROMs.
-
-### Recreate Virtual Machine on macOS Parallels
+### Recreate BIOS Virtual Machine on macOS Parallels
 
 Recreates a Parallels Desktop virtual machine using:
 
 1. 1 x unaltered Windows ISO.
 2. 1 x drivers ISO.
+
+### Recreate UEFI Virtual Machine on macOS Parallels
+
+Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO.
+
+### Remove CD ROM Drives and Restart
+
+Removes both CD ROMs.
+
+### Create Drivers and Answer File ISO for Parallels Group
+
+
+### Recreate UEFI Virtual Machine on macOS Parallels with Attached Drivers
+
 
 
 
@@ -93,9 +106,11 @@ Recreates a Parallels Desktop virtual machine using:
 | Name | Type | Script Reference | Comment |
 | ---- | ---- | ---------------- | ------- |
 | Kickstarted Node | Basic Node | `kickstartednode` |  |
+| Kickstarted Parallels OS Type | Text | `kickstartedparallelsostype` |  |
+| Kickstarted VM CPU Count | Text | `kickstartedvmcpucount` |  |
+| Kickstarted VM Ram Size GB | Text | `kickstartedvmramsizegb` |  |
 | Kickstarted Windows Node | Windows Node | `kickstartedwindowsnode` |  |
 | Kickstart Organisation Name | Text | `kickstartorganisationname` |  |
-| KS Parallels: Attune Base Dir | Text | `ksparallelsattunebasedir` | This will be a subfolder of the user's home directory. Don't start with a / or a ~ |
 | KS Parallels: Homebrew Installation Dir | Text | `ksparallelshomebrewinstallationdir` | Use a subfolder of the user's home directory. Don't start with a / or a ~ |
 | KS: Windows Interface Alias | Text | `kswindowsinterfacealias` | oVirt = "Ethernet"<br>ESXi = "Ethernet0"<br>Parallels = "Ethernet"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
 | macOS Host | Linux/Unix Node | `macoshost` |  |
@@ -106,9 +121,9 @@ Recreates a Parallels Desktop virtual machine using:
 | Target Server: Windows TimeZone | Text | `targetserverwindowstimezone` |  |
 | Target Subnet | Network IPv4 Subnet | `targetsubnet` |  |
 | Windows: Administrator | Windows Credential | `windowsadministrator` | The windows administrator user |
-| Kickstarted Parallels OS Type | Text | `kickstartedparallelsostype` |  |
-| Kickstarted VM Ram Size GB | Text | `kickstartedvmramsizegb` |  |
-| Kickstarted VM CPU Count | Text | `kickstartedvmcpucount` |  |
+| Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user credentials for the node building the kickstart ISO.<br>Only for Kickstart Worker Linux Node. |
+| Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | Linux refers to both Linux and MacOS. |
+| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` | This will be a subfolder of the user's home directory. Don't start with a / or a ~ |
 
 
 
