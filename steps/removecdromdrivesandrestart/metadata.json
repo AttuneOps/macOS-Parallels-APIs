@@ -8,7 +8,7 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "kswpwinrmhttpswaitplus120s"
+            "stepKey": "winrmhttpswait120sdelay"
         }, 
         {
             "order": 100, 
@@ -20,7 +20,7 @@
         }, 
         {
             "order": 250, 
-            "stepKey": "kspstartvm"
+            "stepKey": "startvm"
         }, 
         {
             "order": 300, 

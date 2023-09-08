@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "f5b6abdf-85bb-4dbb-95cd-59d65e013907", 
+    "externalUuid4": "26932440-b741-4f26-a206-9aef54774882", 
     "interpreter": 1, 
-    "key": "kspdeletevm", 
-    "name": "KSP Delete VM", 
+    "key": "loadwindowsiso", 
+    "name": "Load Windows ISO", 
     "osCredKey": "macoshostuser", 
     "serverKey": "macoshost", 
     "successExitCode": 0, 

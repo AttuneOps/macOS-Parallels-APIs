@@ -67,13 +67,6 @@ Install Parallels Tools. Use this after Windows installation has completed.
 ### KS Deploy Parallels Drivers
 
 
-### KS Parallels Recreate Virtual Machine
-
-Recreates a Parallels Desktop virtual machine using:
-
-1. 1 x unaltered Windows ISO.
-2. 1 x drivers ISO.
-
 ### KS Setup macOS for ISO Building
 
 
@@ -83,6 +76,13 @@ Recreates a Parallels Desktop virtual machine using:
 ### Remove CD ROM Drives and Restart
 
 Removes both CD ROMs.
+
+### Recreate Windows Virtual Machine on macOS Parallels
+
+Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO.
 
 
 

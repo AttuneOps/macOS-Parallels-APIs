@@ -6,29 +6,38 @@
 
 
 <head>
-    <title>How to Install Parallels Tools - Attune Automation</title>
+    <title>How to Recreate Windows Virtual Machine on macOS Parallels - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Install Parallels Tools - Attune Automation">
+          content="How to Recreate Windows Virtual Machine on macOS Parallels - Attune Automation">
     <meta name="description"
-          content="Install Parallels Tools. Use this after Windows installation has completed.">
+          content="Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO.">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Install Parallels Tools - Attune Automation" />
-    <meta property="og:description" content="Install Parallels Tools. Use this after Windows installation has completed." />
+          content="HowTo Recreate Windows Virtual Machine on macOS Parallels - Attune Automation" />
+    <meta property="og:description" content="Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO." />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Install Parallels Tools - Attune Automation" />
-    <meta name="twitter:description" content="Install Parallels Tools. Use this after Windows installation has completed." />
+          content="How to Recreate Windows Virtual Machine on macOS Parallels - Attune Automation" />
+    <meta name="twitter:description" content="Recreates a Parallels Desktop virtual machine using:
+
+1. 1 x unaltered Windows ISO.
+2. 1 x drivers ISO." />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -119,7 +128,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Install Parallels Tools</strong>
+                    <strong>Recreate Windows Virtual Machine on macOS Parallels</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +142,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Install Parallels Tools
+                How to Recreate Windows Virtual Machine on macOS Parallels
             </h1>
         </div>
     </div>
@@ -142,7 +151,11 @@
     <div class="row">
         <div class="description col px-0">
             <p class="text-left">
-                <p>Install Parallels Tools. Use this after Windows installation has completed.</p>
+                <p>Recreates a Parallels Desktop virtual machine using:</p>
+<ol>
+<li>1 x unaltered Windows ISO.</li>
+<li>1 x drivers ISO.</li>
+</ol>
             </p>
         </div>
     </div>
@@ -204,7 +217,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Install Parallels Tools</strong>
+                            <strong>Recreate Windows Virtual Machine on macOS Parallels</strong>
                         </a>
                     </p>
 
@@ -213,48 +226,24 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deployparallelstools">
-                            <strong>Step 1 -</strong> Deploy Parallels Tools
+                        <a href="#deletevm">
+                            <strong>Step 1 -</strong> Delete VM
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#mountparallelstoolsiso">
-                            <strong>Step 2 -</strong> Mount Parallels Tools ISO
+                        <a href="#createvm">
+                            <strong>Step 2 -</strong> Create VM
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#runptagentexe">
-                            <strong>Step 3 -</strong> Run PTAgent.exe
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountparallelstoolsiso">
-                            <strong>Step 4 -</strong> Unmount Parallels Tools ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#removeisofromsoftware">
-                            <strong>Step 5 -</strong> Remove ISO from Software
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#kswpshutdownvm">
-                            <strong>Step 6 -</strong> KSWP Shutdown VM
+                        <a href="#loadwindowsiso">
+                            <strong>Step 3 -</strong> Load Windows ISO
                         </a>
                     </p>
 
@@ -262,15 +251,15 @@
 
                     <p class="text-muted pt-2">
                         <a href="#startvm">
-                            <strong>Step 7 -</strong> Start VM
+                            <strong>Step 4 -</strong> Start VM
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#kswpwinrmhttpswait">
-                            <strong>Step 8 -</strong> KSWP WinRM HTTPS Wait
+                        <a href="#winrmhttpswait120sdelay">
+                            <strong>Step 5 -</strong> WinRM HTTPS Wait 120s Delay
                         </a>
                     </p>
 
@@ -333,7 +322,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Install Parallels Tools</strong>
+                You've automated: <strong>Recreate Windows Virtual Machine on macOS Parallels</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -364,9 +353,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="deployparallelstools">
-                            <a href="#deployparallelstools">
-                                <strong>Step 1 -</strong> Deploy Parallels Tools
+                        <h3 id="deletevm">
+                            <a href="#deletevm">
+                                <strong>Step 1 -</strong> Delete VM
                             </a>
                         </h3>
                     </div>
@@ -374,317 +363,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Parallels Tools ISO to <code>/c$/software</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via RDP:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-mstsc /admin /v:{kickstartedwindowsnode}
-                            </code>
-                        </div>
-                        <div class="row">
-                            <p>
-                                Login as user {windowsadministrator} and open a
-                                command prompt.
-                            </p>
-                        </div>
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>Get from "/Applications/Parallels Desktop.app/Contents/Resources/Tools/prl-tools-win.iso".</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Parallels_Tools.tar</strong>
-            to the target node.
-        </p>
-        <p>
-            <strong>Deploy the File(s)</strong> here:
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-/c$/software
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="mountparallelstoolsiso">
-                            <a href="#mountparallelstoolsiso">
-                                <strong>Step 2 -</strong> Mount Parallels Tools ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Mounts Windows Parallels Tools ISO to <code>D:</code> drive.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$FOLDER = &quot;C:\software&quot;
-Set-Location -Path &quot;${FOLDER}&quot;
-
-$ISO_NAME = (Get-ChildItem *.iso).Name
-
-Write-Host &quot;ISO_NAME = ${ISO_NAME}&quot;
-
-Mount-DiskImage -ImagePath &quot;${FOLDER}\${ISO_NAME}&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="runptagentexe">
-                            <a href="#runptagentexe">
-                                <strong>Step 3 -</strong> Run PTAgent.exe
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Runs a silent installation of PTAgent.exe. More inforamation is at
-https://kb.parallels.com/en/116161.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-D:\PTagent.exe /install_silent
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="unmountparallelstoolsiso">
-                            <a href="#unmountparallelstoolsiso">
-                                <strong>Step 4 -</strong> Unmount Parallels Tools ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Unmounts the <code>D:</code> drive.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$FOLDER = &quot;C:\software&quot;
-Set-Location -Path &quot;${FOLDER}&quot;
-
-$ISO_NAME = (Get-ChildItem *.iso).Name
-
-Write-Host &quot;ISO_NAME = ${ISO_NAME}&quot;
-
-Dismount-DiskImage -ImagePath &quot;${FOLDER}\${ISO_NAME}&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="removeisofromsoftware">
-                            <a href="#removeisofromsoftware">
-                                <strong>Step 5 -</strong> Remove ISO from Software
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the Parallels Tools ISO from <code>C:\software</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$FOLDER = &quot;C:\software&quot;
-Set-Location -Path &quot;${FOLDER}&quot;
-
-$ISO_NAME = (Get-ChildItem *.iso).Name
-
-Remove-Item $ISO_NAME
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="kswpshutdownvm">
-                            <a href="#kswpshutdownvm">
-                                <strong>Step 6 -</strong> KSWP Shutdown VM
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Shut down virtual machine.</p>
+                                <p>Deletes the Virtual Machine.</p>
                             </p>
                         </div>
                     </div>
@@ -726,8 +405,156 @@ ssh {macoshostuser}@{macoshost}
                 <code class="language-sql py-0">
 VM=&#x27;{kickstartedNode.hostname}&#x27;
 
-echo &quot;Shutting down ${VM}&quot;
-prlctl stop &quot;${VM}&quot;
+if prlctl list &quot;${VM}&quot;
+then
+    echo &quot;VM Found&quot;
+    
+    echo  &quot;Deleting VM : ${VM}&quot;
+    if prlctl delete &quot;${VM}&quot;
+    then  
+        echo &quot;Success&quot;
+    else 
+        prlctl stop &quot;${VM}&quot; --kill
+        prlctl delete &quot;${VM}&quot;
+    fi
+else
+    echo &quot;No VM, continuing.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createvm">
+                            <a href="#createvm">
+                                <strong>Step 2 -</strong> Create VM
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates the virtual machine.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+VM=&#x27;{kickstartedNode.hostname}&#x27;
+set -x
+
+# Create the VM
+prlctl create &quot;${VM}&quot; --ostype {ksParallelsOstype}
+
+# Set the VM Paramaters
+prlctl set &quot;${VM}&quot; --memsize $(({ksVmRamSizeGb}*1024))
+
+# Set the VM CPU Count
+prlctl set &quot;${VM}&quot; --cpus {ksVmCpuCount}
+
+# All Synerty kickstarts are 50gb as a standard
+prlctl set &quot;${VM}&quot; --size 51200
+
+# Disable EFI boot
+#prlctl set &quot;${VM}&quot; --efi-boot=off
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="loadwindowsiso">
+                            <a href="#loadwindowsiso">
+                                <strong>Step 3 -</strong> Load Windows ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Loads the Windows ISO to the first CD ROM.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+VM=&#x27;{kickstartedNode.hostname}&#x27;
+
+DIR=&quot;${HOME}/Parallels/os_auto_install/&quot;
+
+# Set up the Virtual Machine by mounting the .iso to a cd drive
+prlctl set &quot;${VM}&quot; \
+    --device-set cdrom0 \
+    --image ${DIR}/kickstart_{targetServer.fqn}.iso \
+    --enable \
+    --connect
+    
+# this should be a D: drive
                 </code>
             </pre>
         </div>
@@ -744,7 +571,7 @@ prlctl stop &quot;${VM}&quot;
                     <div class="row pt-5">
                         <h3 id="startvm">
                             <a href="#startvm">
-                                <strong>Step 7 -</strong> Start VM
+                                <strong>Step 4 -</strong> Start VM
                             </a>
                         </h3>
                     </div>
@@ -799,9 +626,9 @@ prlctl start &quot;${VM}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="kswpwinrmhttpswait">
-                            <a href="#kswpwinrmhttpswait">
-                                <strong>Step 8 -</strong> KSWP WinRM HTTPS Wait
+                        <h3 id="winrmhttpswait120sdelay">
+                            <a href="#winrmhttpswait120sdelay">
+                                <strong>Step 5 -</strong> WinRM HTTPS Wait 120s Delay
                             </a>
                         </h3>
                     </div>
@@ -809,7 +636,7 @@ prlctl start &quot;${VM}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>A longer post wait time here is required here because WinRM HTTPS will be active before Windows has finished "Setting up everything for you".</p>
                             </p>
                         </div>
                     </div>
@@ -830,7 +657,7 @@ prlctl start &quot;${VM}&quot;
     <div class="row">
         <p class="mb-0">
             Check if TCP Port <strong>0</strong> is listening.
-            When the TCP Port is up, wait <strong>10</strong>
+            When the TCP Port is up, wait <strong>120</strong>
             seconds.
         </p>
         <p>Use Telnet to check if the TCP Service is accepting connections.</p>

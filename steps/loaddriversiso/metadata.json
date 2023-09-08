@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "461313c3-d8e1-4ab7-938f-54d6044617ae", 
+    "externalUuid4": "d15c501e-a961-44bd-a564-aa10a24010f8", 
     "interpreter": 1, 
-    "key": "kspcreatevm", 
-    "name": "KSP Create VM", 
+    "key": "loaddriversiso", 
+    "name": "Load Drivers ISO", 
     "osCredKey": "macoshostuser", 
     "serverKey": "macoshost", 
     "successExitCode": 0, 

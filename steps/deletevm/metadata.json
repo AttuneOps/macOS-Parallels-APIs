@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "d15c501e-a961-44bd-a564-aa10a24010f8", 
+    "externalUuid4": "f5b6abdf-85bb-4dbb-95cd-59d65e013907", 
     "interpreter": 1, 
-    "key": "ksploaddriversiso", 
-    "name": "KSP Load Drivers ISO", 
+    "key": "deletevm", 
+    "name": "Delete VM", 
     "osCredKey": "macoshostuser", 
     "serverKey": "macoshost", 
     "successExitCode": 0, 

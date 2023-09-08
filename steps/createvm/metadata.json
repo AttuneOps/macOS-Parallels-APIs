@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "26932440-b741-4f26-a206-9aef54774882", 
+    "externalUuid4": "461313c3-d8e1-4ab7-938f-54d6044617ae", 
     "interpreter": 1, 
-    "key": "ksploadwindowsiso", 
-    "name": "KSP Load Windows ISO", 
+    "key": "createvm", 
+    "name": "Create VM", 
     "osCredKey": "macoshostuser", 
     "serverKey": "macoshost", 
     "successExitCode": 0, 
