@@ -2,13 +2,13 @@ VM='{kickstartedNode.hostname}'
 set -x
 
 # Create the VM
-prlctl create "${VM}" --ostype {ksParallelsOstype}
+prlctl create "${VM}" --ostype {kickstartedParallelsOsType}
 
 # Set the VM Paramaters
-prlctl set "${VM}" --memsize $(({ksVmRamSizeGb}*1024))
+prlctl set "${VM}" --memsize $(({kickstartedVmRamSizeGb}*1024))
 
 # Set the VM CPU Count
-prlctl set "${VM}" --cpus {ksVmCpuCount}
+prlctl set "${VM}" --cpus {kickstartedVmCpuCount}
 
 # All Synerty kickstarts are 50gb as a standard
 prlctl set "${VM}" --size 51200

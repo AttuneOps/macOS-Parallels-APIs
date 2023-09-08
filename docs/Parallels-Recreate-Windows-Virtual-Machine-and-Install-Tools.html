@@ -206,8 +206,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#recreatewindowsvirtualmachineonmacosparallels">
-                            <strong>Step 1 -</strong> Recreate Windows Virtual Machine on macOS Parallels
+                        <a href="#recreatevirtualmachineonmacosparallels">
+                            <strong>Step 1 -</strong> Recreate Virtual Machine on macOS Parallels
                         </a>
                     </p>
     
@@ -230,8 +230,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#loadwindowsiso">
-                            <strong>Step 1.3 -</strong> Load Windows ISO
+                        <a href="#loadiso">
+                            <strong>Step 1.3 -</strong> Load ISO
                         </a>
                     </p>
 
@@ -240,14 +240,6 @@
                     <p class="text-muted pt-2">
                         <a href="#startvm">
                             <strong>Step 1.4 -</strong> Start VM
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#winrmhttpswait120sdelay">
-                            <strong>Step 1.5 -</strong> WinRM HTTPS Wait 120s Delay
                         </a>
                     </p>
 
@@ -464,9 +456,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="recreatewindowsvirtualmachineonmacosparallels">
-                            <a href="#recreatewindowsvirtualmachineonmacosparallels">
-                                <strong>Step 1 -</strong> Recreate Windows Virtual Machine on macOS Parallels
+                        <h3 id="recreatevirtualmachineonmacosparallels">
+                            <a href="#recreatevirtualmachineonmacosparallels">
+                                <strong>Step 1 -</strong> Recreate Virtual Machine on macOS Parallels
                             </a>
                         </h3>
                     </div>
@@ -621,13 +613,13 @@ VM=&#x27;{kickstartedNode.hostname}&#x27;
 set -x
 
 # Create the VM
-prlctl create &quot;${VM}&quot; --ostype {ksParallelsOstype}
+prlctl create &quot;${VM}&quot; --ostype {kickstartedParallelsOsType}
 
 # Set the VM Paramaters
-prlctl set &quot;${VM}&quot; --memsize $(({ksVmRamSizeGb}*1024))
+prlctl set &quot;${VM}&quot; --memsize $(({kickstartedVmRamSizeGb}*1024))
 
 # Set the VM CPU Count
-prlctl set &quot;${VM}&quot; --cpus {ksVmCpuCount}
+prlctl set &quot;${VM}&quot; --cpus {kickstartedVmCpuCount}
 
 # All Synerty kickstarts are 50gb as a standard
 prlctl set &quot;${VM}&quot; --size 51200
@@ -648,9 +640,9 @@ prlctl set &quot;${VM}&quot; --size 51200
 
 
                     <div class="row pt-5">
-                        <h4 id="loadwindowsiso">
-                            <a href="#loadwindowsiso">
-                                <strong>Step 1.3 -</strong> Load Windows ISO
+                        <h4 id="loadiso">
+                            <a href="#loadiso">
+                                <strong>Step 1.3 -</strong> Load ISO
                             </a>
                         </h4>
                     </div>
@@ -694,7 +686,7 @@ DIR=&quot;${HOME}/Parallels/os_auto_install/&quot;
 # Set up the Virtual Machine by mounting the .iso to a cd drive
 prlctl set &quot;${VM}&quot; \
     --device-set cdrom0 \
-    --image ${DIR}/kickstart_{targetServer.fqn}.iso \
+    --image ${DIR}/kickstart_{kickstartedNode.fqn}.iso \
     --enable \
     --connect
     
@@ -765,52 +757,6 @@ prlctl start &quot;${VM}&quot;
 
 
 
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="winrmhttpswait120sdelay">
-                            <a href="#winrmhttpswait120sdelay">
-                                <strong>Step 1.5 -</strong> WinRM HTTPS Wait 120s Delay
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>A longer post wait time here is required here because WinRM HTTPS will be active before Windows has finished "Setting up everything for you".</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    <div class="row">
-        <p class="mb-0">
-            Check if TCP Port <strong>0</strong> is listening.
-            When the TCP Port is up, wait <strong>120</strong>
-            seconds.
-        </p>
-        <p>Use Telnet to check if the TCP Service is accepting connections.</p>
-    </div>
-
-
-
-
-
 
         
 
@@ -869,7 +815,8 @@ prlctl start &quot;${VM}&quot;
 
 
 
-    
+
+
 
     
 

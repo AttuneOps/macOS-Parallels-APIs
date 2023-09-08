@@ -77,7 +77,7 @@ Install Parallels Tools. Use this after Windows installation has completed.
 
 Removes both CD ROMs.
 
-### Recreate Windows Virtual Machine on macOS Parallels
+### Recreate Virtual Machine on macOS Parallels
 
 Recreates a Parallels Desktop virtual machine using:
 
@@ -97,9 +97,6 @@ Recreates a Parallels Desktop virtual machine using:
 | Kickstart Organisation Name | Text | `kickstartorganisationname` |  |
 | KS Parallels: Attune Base Dir | Text | `ksparallelsattunebasedir` | This will be a subfolder of the user's home directory. Don't start with a / or a ~ |
 | KS Parallels: Homebrew Installation Dir | Text | `ksparallelshomebrewinstallationdir` | Use a subfolder of the user's home directory. Don't start with a / or a ~ |
-| KS Parallels OS Type | Text | `ksparallelsostype` |  |
-| KS: VM CPU Count | Text | `ksvmcpucount` |  |
-| KS: VM Ram Size GB | Text | `ksvmramsizegb` |  |
 | KS: Windows Interface Alias | Text | `kswindowsinterfacealias` | oVirt = "Ethernet"<br>ESXi = "Ethernet0"<br>Parallels = "Ethernet"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
 | macOS Host | Linux/Unix Node | `macoshost` |  |
 | macOS Host User | Linux/Unix Credential | `macoshostuser` |  |
@@ -109,6 +106,9 @@ Recreates a Parallels Desktop virtual machine using:
 | Target Server: Windows TimeZone | Text | `targetserverwindowstimezone` |  |
 | Target Subnet | Network IPv4 Subnet | `targetsubnet` |  |
 | Windows: Administrator | Windows Credential | `windowsadministrator` | The windows administrator user |
+| Kickstarted Parallels OS Type | Text | `kickstartedparallelsostype` |  |
+| Kickstarted VM Ram Size GB | Text | `kickstartedvmramsizegb` |  |
+| Kickstarted VM CPU Count | Text | `kickstartedvmcpucount` |  |
 
 
 
